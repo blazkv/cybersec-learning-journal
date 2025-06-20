@@ -32,19 +32,11 @@ Hands-on labs, technical experiments, and tool-based mini-projects that simulate
 
 ---
 
-## 🧠 Concepts
+## 🧠 Miscellaneous
 
-Short writeups explaining key cybersecurity concepts and principles like CIA Triad, Zero Trust, Defense in Depth, etc.
+Writeups on cybersecurity concepts and principles, other projects, CTFs and more.
 
-📁 Read concepts in [`concepts/README.md`](concepts/README.md)
-
----
-
-## 🚀 Other Projects & Events
-
-Miscellaneous cybersecurity projects, CTFs, or events that helped build practical experience.
-
-📁 See additional work in [`projects/README.md`](projects/README.md)
+📁 Read concepts in [`miscellaneous/README.md`](miscellaneous/README.md)
 
 ---
 
