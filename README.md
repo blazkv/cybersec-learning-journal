@@ -36,7 +36,7 @@ Hands-on labs, technical experiments, and tool-based mini-projects that simulate
 
 Writeups on cybersecurity concepts and principles, other projects, CTFs and more.
 
-📁 Read concepts in [`miscellaneous/README.md`](miscellaneous/README.md)
+📁 View miscellaneous in [`miscellaneous/README.md`](miscellaneous/README.md)
 
 ---
 
