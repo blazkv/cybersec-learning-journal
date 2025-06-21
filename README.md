@@ -18,7 +18,7 @@ I'm an aspiring cybersecurity professional with a degree in Information Security
 
 ## 📓 Writeups
 
-Documented learning experiences — from platforms like TryHackMe, online courses, certification prep, and study sessions.
+Documented learning experiences from platforms like TryHackMe, online courses, certification prep, and study sessions.
 
 📁 Explore writeups in [`writeups/README.md`](writeups/README.md)
 
