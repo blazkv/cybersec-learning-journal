@@ -1,4 +1,4 @@
-# # Confidentiality, Integrity & Availability (CIA) Triad
+# Confidentiality, Integrity & Availability (CIA) Triad
 
 This writeup is a summary of my research and reflections on the CIA Triad, a foundational concept in cybersecurity. I explore its principles, real-world applications, and challenges based on industry guidance and case studies.
 
