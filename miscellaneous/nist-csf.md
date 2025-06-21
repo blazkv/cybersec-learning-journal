@@ -51,10 +51,7 @@ Beyond operational use, many organizations integrate the CSF into their ISMS, us
 
 ## ⚠️ Challenges / Common Pitfalls
 
-* Treating the CSF as a checkbox compliance exercise instead of a flexible, risk-based framework that adapts to the organization’s needs.
-* Failing to clearly link CSF activities to the organization’s specific business objectives and risk appetite.
-* Neglecting continuous monitoring, regular reassessment, and updating of the cybersecurity program, resulting in outdated or ineffective controls.
-* Overlooking the importance of integrating the CSF with other regional or international standards and regulations relevant in the EU, such as GDPR or ISO 27001.
+A common challenge when using the NIST CSF is treating it as just a **checklist** for compliance instead of a **flexible framework** that should evolve with the organization’s **risks**. This often leads to implementing controls that don’t effectively reduce real **threats**. Another issue is failing to connect CSF activities directly to the organization’s **business goals** and **risk tolerance**. Without this link, security efforts may focus on less important areas while **critical risks** remain unaddressed. Many organizations also struggle with keeping their cybersecurity program **up to date** because they do not continuously **monitor** or **reassess** their controls. This can leave them vulnerable to new **attack methods**. Finally, it is important to integrate the CSF with other relevant **standards** and **regulations** such as **GDPR** or **ISO 27001**. Ignoring this can cause gaps in security and compliance that SOC teams must watch for. For junior SOC personnel, understanding these pitfalls is essential for helping maintain an effective, **risk-focused** cybersecurity program.
 
 ---
 
