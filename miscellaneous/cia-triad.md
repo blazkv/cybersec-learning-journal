@@ -1,5 +1,7 @@
 # The CIA Triad
 
+---
+
 ## 📝 Definition
 
 This summary is based on the [NIST Cybersecurity Practice Guide SP 1800-26A](https://csrc.nist.gov/pubs/sp/800/12/r1/final). The **CIA Triad** is a foundational model in cybersecurity representing three critical principles:
@@ -34,7 +36,7 @@ The CIA Triad supports and underpins each of these functions, ensuring that secu
 
 ## 🔍 Real-World Examples
 
-In **November 2023**, *Holding Slovenske elektrarne (HSE)*—Slovenia’s largest power generation company—was struck by a **ransomware attack** that encrypted files across its IT infrastructure. Although **power production** and core plant operations remained functional, internal systems, websites, and employee access were **compromised**.
+In **November 2023**, Holding Slovenske elektrarne (HSE) was struck by a **ransomware attack** that encrypted files across its IT infrastructure. Although **power production** and core plant operations remained functional, internal systems, websites, and employee access were **compromised**.
 
 This incident clearly illustrates the CIA Triad in action:
 
