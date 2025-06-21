@@ -4,5 +4,9 @@ A collection of writeups, projects, and events related to cybersecurity concepts
 
 | Item | Description |
 |------|-------------|
-| [Miscellaneous File 1](miscellaneous-writeups-1.md) | Detailed explanations of key cybersecurity topics like encryption, network protocols, and attack vectors |
-| [Miscellaneous File 2](,iscellaneous-writeups-2.md) | Detailed explanations of key cybersecurity topics like encryption, network protocols, and attack vectors |
+| [Confidentiality, Integrity & Availability (CIA) Triad](cia-triad.md) | This writeup is a reflection on my research and understanding of the CIA Triad — a foundational cybersecurity model — based on NIST guidance and real-world incidents. |
+| [NIST Cybersecurity Framework (CSF)](nist-csf.md) | This writeup summarizes my research and reflections on the NIST Cybersecurity Framework — its structure, core functions, and how it's used to guide cybersecurity programs in practice. |
+
+---
+
+🔙 Back to [Cybersecurity Learning Journal](../README.md)
