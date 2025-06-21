@@ -1,6 +1,6 @@
 # 🛡️ Cybersecurity Learning Journal
 
-Welcome to my cybersecurity learning journal — a place where I document my hands-on experience, course progress, labs, and self-guided projects as I develop my skills in information security.
+Welcome to my cybersecurity learning journal. This is where I document my hands-on experience, course progress, labs, and self-guided projects as I develop my skills in information security.
 
 ---
 
