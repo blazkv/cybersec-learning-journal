@@ -49,3 +49,7 @@ The CSF is organized into several key components:
 - Failing to align CSF implementation with business goals or risk appetite.
 - Overlooking the importance of continuous assessment and adaptation.
 - Assuming it's U.S.-only — when in fact, it’s globally applicable and often used outside the U.S.
+
+---
+
+🔙 Back to [Miscellaneous Overview](README.md)
