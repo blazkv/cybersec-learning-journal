@@ -5,14 +5,20 @@ This writeup summarizes my research and reflections on the NIST Cybersecurity Fr
 ---
 
 ## 📝 Definition  
-The NIST Cybersecurity Framework (CSF) is a set of standards, guidelines, and best practices developed by the U.S. National Institute of Standards and Technology. It provides a flexible and repeatable structure for organizations to identify, protect against, detect, respond to, and recover from cybersecurity threats.
 
-Originally published in 2014 and updated to version 2.0 in 2024, the CSF is designed to improve critical infrastructure security but has been widely adopted across both public and private sectors.
+The [NIST CSF](https://www.nist.gov/cyberframework) is primarily a **risk management** tool designed to help organizations identify, assess, and reduce cybersecurity risks in a structured, flexible, and repeatable way. Rather than focusing solely on specific technical controls, it aligns cybersecurity efforts with an organization’s unique risk tolerance and business objectives.
+
+Organized around five core functions, **Identify**, **Protect**, **Detect**, **Respond**, and **Recover**, the CSF provides a comprehensive lifecycle approach to managing cyber risk. This framework helps organizations prioritize their security activities based on what matters most, ensuring resources are used effectively to reduce the likelihood and impact of cyber incidents.
 
 ---
 
-## ❗ Why It Matters  
-*Explain why CSF is important in cybersecurity governance and risk management. What problem does it solve? Why do so many organizations adopt it?*
+## ❗ Why It Matters
+
+It's important because it provides organizations with a common language and systematic approach to managing cybersecurity risks. Without a structured framework, organizations may struggle to prioritize security investments or respond effectively to incidents.
+
+By adopting the CSF, organizations can align **cybersecurity efforts** with **business objectives** and **risk tolerance**, making security decisions that support overall organizational goals. This helps reduce vulnerabilities, improve threat detection, and enhance response and recovery capabilities.
+
+Additionally, the CSF promotes **communication** and **coordination** across departments and with external partners, fostering a culture of security awareness that is essential for effective risk management.
 
 ---
 
