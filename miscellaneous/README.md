@@ -1,4 +1,4 @@
-# 📚 Miscellaneous
+# 📚 Miscellaneous Overview
 
 A collection of writeups, projects, and events related to cybersecurity concepts and experiences outside of structured labs.
 
