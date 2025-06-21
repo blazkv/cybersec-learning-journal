@@ -1,9 +1,5 @@
 # Confidentiality, Integrity & Availability (CIA) Triad
 
-This writeup is a reflection on my research and understanding of the CIA Triad, a foundational cybersecurity model, based on NIST guidance and real-world incidents.
-
----
-
 ## 📝 Definition
 
 This summary is based on the [NIST Cybersecurity Practice Guide SP 1800-26A](https://csrc.nist.gov/pubs/sp/800/12/r1/final). The **CIA Triad** is a foundational model in cybersecurity representing three critical principles:
