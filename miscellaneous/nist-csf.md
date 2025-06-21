@@ -1,9 +1,5 @@
 # NIST Cybersecurity Framework (CSF)
 
-This writeup summarizes my research and reflections on the NIST CSF. I take a look at its structure, core functions, and how it's used to guide cybersecurity programs in practice.
-
----
-
 ## 📝 Definition
 
 The [NIST CSF](https://www.nist.gov/cyberframework) is primarily a **risk management** tool designed to help organizations identify, assess, and reduce cybersecurity risks in a structured, flexible, and repeatable way. Rather than focusing solely on specific technical controls, it aligns cybersecurity efforts with an organization’s unique risk tolerance and business objectives.
