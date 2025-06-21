@@ -4,8 +4,9 @@ A collection of writeups, projects, and events related to cybersecurity concepts
 
 | Item | Description |
 |------|-------------|
-| [Confidentiality, Integrity & Availability (CIA) Triad](cia-triad.md) | This writeup is a reflection on my research and understanding of the CIA Triad, a foundational cybersecurity model, based on NIST guidance and real-world incidents. |
-| [NIST Cybersecurity Framework (CSF)](nist-csf.md) | This writeup summarizes my research and reflections on the NIST CSF. I take a look at its structure, core functions, and how it's used to guide cybersecurity programs in practice. |
+| [Confidentiality, Integrity & Availability (CIA) Triad](cia-triad.md) | A reflection on the CIA Triad’s role as a foundational cybersecurity model, drawing on NIST guidance and real-world examples. |
+| [NIST Cybersecurity Framework (CSF)](nist-csf.md) | An exploration of the CSF’s structure, core functions, and practical application for managing cybersecurity risks. |
+| [Authentication, Authorization, Accounting (AAA)](aaa.md) | An overview of the AAA framework’s components and its importance in controlling access and ensuring accountability in security. |
 
 ---
 
