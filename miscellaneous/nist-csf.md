@@ -75,4 +75,10 @@ Beyond operational use, many organizations integrate the CSF into their **inform
 
 ---
 
+## 📌 Disclaimer
+
+The NIST Cybersecurity Framework is a broad and evolving topic, and this writeup captures only a snapshot of my current understanding. While this summary highlights key concepts and reflections, I recognize there is much more to explore. Moving forward, I plan to deepen my knowledge by working directly with the CSF documentation, applying it in mock security information and event management (SIEM) exercises, and continuing my learning journey in cybersecurity.
+
+---
+
 🔙 Back to [Miscellaneous Overview](README.md)
