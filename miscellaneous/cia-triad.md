@@ -59,3 +59,7 @@ A frequent **misconception** is treating confidentiality, integrity, and availab
 Another pitfall is viewing the triad purely from a **technical standpoint**, ignoring human and organizational factors. Security policies, user awareness, and physical safeguards are all essential to upholding the triad in real-world environments. Even the most secure infrastructure can fail due to weak credentials or poor configuration.
 
 Finally, in **modern architectures** like cloud computing, IoT, and hybrid work environments, the traditional boundaries around data and control shift. Security teams must continuously reassess how the CIA principles apply in these evolving contexts to ensure they remain enforceable and effective.
+
+---
+
+🔙 Back to [Miscellaneous Overview](README.md)
