@@ -1,6 +1,6 @@
 # NIST Cybersecurity Framework (CSF)
 
-This writeup is a summary of my research and reflections on the NIST Cybersecurity Framework, a widely used set of guidelines for managing and reducing cybersecurity risk. I explore its structure, purpose, and relevance to security operations and broader risk management.
+This writeup summarizes my research and reflections on the NIST Cybersecurity Framework — its structure, core functions, and how it's used to guide cybersecurity programs in practice.
 
 ---
 
