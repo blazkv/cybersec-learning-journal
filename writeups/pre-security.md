@@ -87,4 +87,4 @@ On the server side, **response headers** like **Set-Cookie**, **Cache-Control**,
 
 ---
 
-🔙 Back to [Writeups Overview](writeups/README.md)
+🔙 Back to [Writeups Overview](README.md)
