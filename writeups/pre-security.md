@@ -1,15 +1,6 @@
 # TryHackMe - Pre Security
 
-Today I started my journey on the TryHackMe (THM) learning paths, beginning with **Pre Security**. I've already encountered much of the content covered in this and the Cyber Security 101 paths, but I’m treating this as a refresher to reinforce my knowledge and fill in any gaps I may have missed during my Information Security studies.
-
-The **Pre Security** path is made up of five modules:
-1. Introduction to Cyber Security
-2. Network Fundamentals
-3. How the Web Works
-4. Linux Fundamentals
-5. Windows Fundamentals
-
-In this write-up, I’ll describe my journey through this learning path, starting with the first module.
+The **Pre Security** path on TryHackMe covers essential technical knowledge to get started in cyber security. While I'm already familiar with much of the content from my Information Security studies and the Cyber Security 101 path, I'm using this as a refresher to reinforce my knowledge and catch any gaps I may have missed.
 
 ---
 
