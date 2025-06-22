@@ -4,8 +4,7 @@ This folder contains detailed notes, summaries, and walkthroughs of cybersecurit
 
 | Title | Description |
 |-------|-------------|
-| [Writeups File 1](writeups-file-1.md) | Description of Writeups File 1 content. |
-| [Writeups File 2](writeups-file-2.md) | Description of Writeups File 2 content. |
+| [TryHackMe - Pre Security](pre-security.md) | A high-level overview and personal notes on the Pre Security path from TryHackMe, covering cybersecurity fundamentals through hands-on simulations and beginner-friendly modules. |
 
 ---
 
