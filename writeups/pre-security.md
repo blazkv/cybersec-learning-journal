@@ -112,20 +112,11 @@ Covered **HTTP (HyperText Transfer Protocol)** and **HTTPS (HTTP Secure)** proto
 
 ### **How Websites Work**
 
-Explored URL structure and components:
 
-* Format: `scheme://user:password@host:port/path?query#fragment`
-* Example: `https://admin:1234@tryhackme.com:443/dashboard?user=test#section2`
-* Understood how browsers issue **GET** requests with contextual headers.
 
 ### **Putting it all together**
 
-Integrated DNS and HTTP concepts to understand a full web request lifecycle:
 
-1. DNS resolves domain name.
-2. Browser sends HTTP request.
-3. Server responds.
-4. Browser renders content and processes follow-up requests.
 
 ---
 
