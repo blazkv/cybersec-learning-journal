@@ -2,60 +2,58 @@
 
 ## 📝 Definition
 
-This summary is based on the [NIST Cybersecurity Practice Guide SP 1800-26A](https://csrc.nist.gov/pubs/sp/800/12/r1/final). The **CIA Triad** is a foundational model in cybersecurity representing three critical principles:
+The **CIA Triad** is the foundational model for information security, representing the three core principles essential to protecting data and systems:
+- **Confidentiality**: Ensuring information is accessible only to authorized users and processes, **preventing unauthorized disclosure**.
+- **Integrity**: Guaranteeing the accuracy, consistency, and trustworthiness of data over its lifecycle; **preventing unauthorized modification or corruption**.
+- **Availability**: Ensuring that information and critical systems are **accessible and operational when needed** by **authorized users**.
 
-* **Confidentiality**: Ensuring information is only accessible to authorized individuals.
-* **Integrity**: Protecting information from unauthorized alteration to maintain its accuracy and trustworthiness.
-* **Availability**: Ensuring that authorized users can access information and resources when needed.
-
-NIST guidance particularly emphasizes data integrity as a key focus area, stressing the importance of preserving data accuracy throughout its lifecycle.
+As defined by the **National Institute of Standards and Technology (NIST)** in **[Special Publication 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)**, these principles guide the implementation of security controls and risk management strategies.
 
 ---
 
 ## ❗ Why It Matters
 
-Maintaining **data integrity** is essential because unauthorized changes can undermine trust in information, leading to operational disruptions and reputational damage. Attacks like **ransomware** specifically target integrity by encrypting or corrupting files, which can halt critical services such as email, financial processing, or customer data management. Detecting and responding to these threats promptly is crucial for minimizing impact.
+In cybersecurity operations, failing to uphold any component of the CIA triad leads to **operational risk** and **potential business impact**:
+- **Breaches of Confidentiality** can cause data leaks, intellectual property loss, and regulatory non-compliance (e.g., GDPR, HIPAA).
+- **Violations of Integrity** can undermine decision-making and trust in systems, causing corrupted transactions or fraudulent activity.
+- **Compromises in Availability** result in downtime, impacting business continuity and potentially causing severe financial and reputational damage (e.g., denial-of-service attacks).
+
+The triad forms the basis of designing **secure architectures**, **incident response strategies**, and **compliance frameworks**.
 
 ---
 
 ## ⚙️ How It Works / Key Components
 
-NIST’s [Cybersecurity Framework (CSF)](https://www.nist.gov/cyberframework) organizes protections around five core functions:
+- **Confidentiality controls**: Access control mechanisms (**RBAC - Role-Based Access Control**, **ABAC - Attribute-Based Access Control**), encryption standards such as **AES (Advanced Encryption Standard)** for data at rest and **TLS (Transport Layer Security)** for data in transit, and data classification schemes.
+- **Integrity controls**: Use of cryptographic hashes (**SHA-2 family**), digital signatures, checksums, and version control. Integrity validation is critical in environments with software supply chain risks or insider threats.
+- **Availability controls**: Redundancy (failover systems, RAID arrays), backup and disaster recovery plans, network resilience (DDoS mitigation technologies, load balancers), and monitoring tools like **SIEM (Security Information and Event Management)** for real-time incident detection.
 
-* **Identify**: Understand risks to systems, assets, and data.
-* **Protect**: Implement safeguards to limit the impact of potential incidents.
-* **Detect**: Recognize cybersecurity events in a timely manner.
-* **Respond**: Contain and mitigate the effects of detected incidents.
-* **Recover**: Restore affected capabilities and services to normal operation.
-
-The CIA Triad supports and underpins each of these functions, ensuring that security controls align with core organizational needs.
+Together, these controls must align with standards such as **ISO/IEC 27001**, **NIST Cybersecurity Framework (CSF)**, etc.
 
 ---
 
 ## 🔍 Real-World Examples
 
-In **November 2023**, Holding Slovenske elektrarne (HSE) was struck by a **ransomware attack** that encrypted files across its IT infrastructure. Although **power production** and core plant operations remained functional, internal systems, websites, and employee access were **compromised**.
+In the **November 2023 Holding Slovenske elektrarne** ransomware attack, attackers compromised the availability of critical energy infrastructure by encrypting systems and demanding ransom. This not only disrupted operations but also threatened integrity, as tampered data could mislead grid management systems. The incident underscored the importance of:
+- **Robust backup** strategies and offline recovery points (to restore availability).
+- **Strict access controls** and network segmentation (to preserve confidentiality and limit attacker lateral movement).
+- **Integrity monitoring** (to detect unauthorized file changes before system restoration).
 
-This incident clearly illustrates the CIA Triad in action:
-
-* **Confidentiality** was threatened by the potential exposure of sensitive internal data.
-* **Integrity** was impacted as encrypted and potentially altered files raised doubts about their trustworthiness.
-* **Availability** suffered as internal workflows were interrupted, reducing employee productivity and public service access.
-
-From a **security operations perspective**, this case highlights the importance of real-time monitoring for encryption patterns, enforcing strong access controls, and segmenting critical infrastructure. Quick containment and recovery measures are essential to maintain availability while assessing any compromise to data integrity or confidentiality.
+This case also highlighted the need for incident response plans to quickly restore availability while ensuring integrity and confidentiality during recovery.
 
 ---
 
 ## ⚠️ Challenges / Common Pitfalls
 
-A key challenge in applying the CIA Triad is maintaining an appropriate **balance** between its components. Overemphasizing one aspect can inadvertently weaken the others. For example, focusing too heavily on **confidentiality** through restrictive access controls can limit **availability** for legitimate users. Likewise, enforcing strict **data integrity** checks may slow down system responsiveness—an issue in time-critical environments.
-
-A frequent **misconception** is treating confidentiality, integrity, and availability as independent goals. In reality, they are deeply **interconnected**: a disruption in availability can make it impossible to verify integrity, while a breach of integrity can compromise confidentiality and trust.
-
-Another pitfall is viewing the triad purely from a **technical standpoint**, ignoring human and organizational factors. Security policies, user awareness, and physical safeguards are all essential to upholding the triad in real-world environments. Even the most secure infrastructure can fail due to weak credentials or poor configuration.
-
-Finally, in **modern architectures** like cloud computing, IoT, and hybrid work environments, the traditional boundaries around data and control shift. Security teams must continuously reassess how the CIA principles apply in these evolving contexts to ensure they remain enforceable and effective.
+- Overemphasis on one component (e.g., availability) at the expense of confidentiality or integrity, leading to imbalanced risk exposure.
+- Misconfiguration of access controls, such as excessive permissions or failure to revoke access, undermining confidentiality.
+- Lack of encryption for sensitive data, increasing exposure to breaches.
+- Insufficient backup testing or recovery plans, resulting in extended downtime and data loss when incidents occur.
+- Failure to monitor integrity continuously, which delays detection of data tampering or malware infections.
+- Underestimating advanced threats (e.g., supply chain attacks, insider threats) that simultaneously target all three triad aspects.
 
 ---
+
+🔝 Back to [top](#confidentiality-integrity--availability-cia-triad)
 
 🔙 Back to [Miscellaneous Overview](README.md)
