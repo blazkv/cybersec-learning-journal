@@ -10,27 +10,27 @@ The **Pre Security** path on TryHackMe provides a solid foundation in cybersecur
 
 This section introduced **Offensive Security**, which involves simulating cyberattacks to identify and exploit system vulnerabilities before malicious actors do.
 
-* Worked through a mock **online banking simulation** using a Linux terminal.
-* Learned to use the `derb` command-line tool for **directory enumeration**, scanning accessible directories and files on a web server.
-* Identified two vulnerable URLs and manipulated account balances, illustrating exploitation of web application flaws.
-* Although familiar with terminal navigation, this was my first experience with `derb`, expanding my awareness of penetration testing tools.
+- Worked through a mock **online banking simulation** using a Linux terminal.
+- Learned to use the `derb` command-line tool for **directory enumeration**, scanning accessible directories and files on a web server.
+- Identified two vulnerable URLs and manipulated account balances, illustrating exploitation of web application flaws.
+- Although familiar with terminal navigation, this was my first experience with `derb`, expanding my awareness of penetration testing tools.
 
 ### **Defensive Security Intro**
 
 This section focused on **Defensive Security**, aligned with **Blue Team** functions such as monitoring, detection, analysis, and incident response.
 
-* Introduced the structure and function of a **Security Operations Center (SOC)**:
-  * Centralized team monitoring systems for vulnerabilities, policy violations, and indicators of compromise (IOCs).
-  * Uses a **SIEM (Security Information and Event Management)** platform for log aggregation and analysis.
-* Learned about **Threat Intelligence** — collecting and analyzing internal and external data to identify adversary tactics, techniques, and procedures (TTPs).
-* Covered fundamentals of **DFIR (Digital Forensics and Incident Response)**:
-  * **Digital Forensics**: Examining logs, memory dumps, file systems, and network traffic to reconstruct attacks.
-  * **Incident Response**: Minimizing damage and recovery time via preparation, detection, containment, and post-incident review.
-  * **Malware Analysis**: Both **static analysis** (code review without execution) and **dynamic analysis** (sandboxed execution to observe behavior).
-* Completed a simulated SOC workflow:
-  * Investigated malicious log entries in a mock SIEM.
-  * Used a threat intel platform (modeled after **AbuseIPDB** and **Cisco Talos Intelligence**) to analyze suspicious IPs.
-  * Escalated incidents and blocked malicious IPs, simulating full response procedures.
+- Introduced the structure and function of a **Security Operations Center (SOC)**:
+ - Centralized team monitoring systems for vulnerabilities, policy violations, and indicators of compromise (IOCs).
+ - Uses a **SIEM (Security Information and Event Management)** platform for log aggregation and analysis.
+- Learned about **Threat Intelligence** — collecting and analyzing internal and external data to identify adversary tactics, techniques, and procedures (TTPs).
+- Covered fundamentals of **DFIR (Digital Forensics and Incident Response)**:
+ - **Digital Forensics**: Examining logs, memory dumps, file systems, and network traffic to reconstruct attacks.
+ - **Incident Response**: Minimizing damage and recovery time via preparation, detection, containment, and post-incident review.
+ - **Malware Analysis**: Both **static analysis** (code review without execution) and **dynamic analysis** (sandboxed execution to observe behavior).
+- Completed a simulated SOC workflow:
+ - Investigated malicious log entries in a mock SIEM.
+ - Used a threat intel platform (modeled after **AbuseIPDB** and **Cisco Talos Intelligence**) to analyze suspicious IPs.
+ - Escalated incidents and blocked malicious IPs, simulating full response procedures.
 
 ---
 
@@ -39,33 +39,33 @@ This section focused on **Defensive Security**, aligned with **Blue Team** funct
 ### **What is Networking?**
 
 Explored the fundamentals of **computer networks** — interconnected devices sharing data.
-* Visual analogy of individuals forming a network to illustrate data flow.
-* Scaled to the **Internet**, a global network made of smaller public and private networks.
+- Visual analogy of individuals forming a network to illustrate data flow.
+- Scaled to the **Internet**, a global network made of smaller public and private networks.
 
 Key device identifiers:
-* **IP Address (Internet Protocol)**:
-  * **Private IPs**: Used within local networks.
-  * **Public IPs**: Assigned by the **ISP (Internet Service Provider)** for external communication.
-  * Covered differences between **IPv4** (32-bit) and **IPv6** (128-bit), with IPv6 adoption due to IPv4 exhaustion.
-* **MAC Address (Media Access Control)**:
-  * Unique hardware identifier for network interfaces (e.g., `a4:c3:f0:85:ac:2d`).
-  * Explored **MAC spoofing** as a technique to bypass weak security controls.
+- **IP Address (Internet Protocol)**:
+ - **Private IPs**: Used within local networks.
+ - **Public IPs**: Assigned by the **ISP (Internet Service Provider)** for external communication.
+ - Covered differences between **IPv4** (32-bit) and **IPv6** (128-bit), with IPv6 adoption due to IPv4 exhaustion.
+- **MAC Address (Media Access Control)**:
+ - Unique hardware identifier for network interfaces (e.g., `a4:c3:f0:85:ac:2d`).
+ - Explored **MAC spoofing** as a technique to bypass weak security controls.
 
 Networking tools:
-* **Ping**:
-  * Sends **ICMP (Internet Control Message Protocol)** packets to test reachability and latency.
-  * Practiced with `ping 8.8.8.8` to verify connectivity.
+- **Ping**:
+ - Sends **ICMP (Internet Control Message Protocol)** packets to test reachability and latency.
+ - Practiced with `ping 8.8.8.8` to verify connectivity.
 
 ### Premium-Only Content
 
 Remaining topics are locked behind a **TryHackMe Premium** subscription:
 
-* **Intro to LAN**
-* **OSI Model**
-* **Packets & Frames**
-* **Extending Your Network**
+- **Intro to LAN**
+- **OSI Model**
+- **Packets & Frames**
+- **Extending Your Network**
 
-I plan to revisit these critical networking topics once accessible.
+There is additional locked content within this course, which I will list under each relevant section. I plan to **revisit these important topics** later through my own research.
 
 ---
 
@@ -144,8 +144,44 @@ As my last task, I had to place in order how a request to a website works. The a
 ## 🐧 4. Linux Fundamentals
    
 ### Linux Fundamentals Part 1
-### Linux Fundamentals Part 2
-### Linux Fundamentals Part 3
+
+I had some exposure to **Linux** before starting this module. I’d used **Ubuntu** before to learn the basics and get comfortable setting up a Linux OS. I also tried **Kali** via **WSL** on Windows to explore some features. I've always enjoyed working with Linux, so this was exciting.
+
+**Linux** powers websites, control panels, **Point of Sale (PoS)** systems, critical infrastructure like light controllers, and more.
+
+Linux is based on the **UNIX OS** and is an umbrella term for many operating systems — like **Ubuntu**, **Kali**, **Debian**, and others. Ubuntu is commonly used for servers and only needs around **512MB of RAM**.
+
+**TryHackMe** provided a browser-based Ubuntu machine to learn with. Since it's lightweight, navigation isn't done through a **GUI (Graphical User Interface)**, but through the **Terminal**, where we use commands. The module had me try:
+- `echo` — outputs any text you provide
+- `whoami` — shows the current user
+- `ls` — lists files in the working directory
+	- `ls file-name` — shows the contents of a specific file
+- `cd` — changes directory
+- `cat` — displays file contents
+- `pwd` — prints the current working directory
+
+For the task, I used these commands to explore folders, read their content, and confirm my current location in the file system.
+
+Linux is great for efficiency — commands like `find` save time and effort:
+- `find -name folder-name` — searches for a folder or file by name
+- `find -name *.txt` — finds all `.txt` files
+- `grep` — searches inside files for specific text
+	- Example: `grep keyword filename`
+
+**Basic operators** include:
+- `&` — runs a command in the background
+	- Example: `cp largefile.txt backup.txt &`
+- `&&` — chains commands (the second only runs if the first succeeds)
+	- Example: `mkdir new && cd new`
+- `>` — redirects output and replaces file content
+	- Example: `echo hey > welcome`
+- `>>` — appends output without overwriting
+	- Example: `echo more >> welcome`
+
+### Premium-Only Content
+
+- **Linux Fundamentals Part 2**
+- **Linux Fundamentals Part 3**
 
 ---
 
