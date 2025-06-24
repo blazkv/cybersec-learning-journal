@@ -6,7 +6,7 @@ The **Pre Security** path on TryHackMe provides a solid foundation in cybersecur
 
 ## Table of Contents
 
-1. [🛡️ Introduction to Cyber Security](#introduction-to-cyber-security)  
+1. [🛡️ Introduction to Cyber Security](#%EF%B8%8F-1-introduction-to-cyber-security)
 2. [📡 Network Fundamentals](#network-fundamentals)  
 3. [🌐 How the Web Works](#how-the-web-works)  
 4. [🐧 Linux Fundamentals](#linux-fundamentals)  
