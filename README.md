@@ -1,6 +1,6 @@
 # 🛡️ Cybersecurity Learning Journal
 
-Welcome to my cybersecurity learning journal. This is where I document my hands-on experience, course progress, labs, and self-guided projects as I develop my skills in information security.
+Welcome to my cybersecurity learning journal, where I document hands-on experiences, course progress, labs, and self-guided projects as I build my skills in information security.
 
 ---
 
@@ -14,7 +14,7 @@ Current focus includes:
 - Pursuing the Google Cybersecurity Professional Certificate
 - Preparing for the CompTIA Security+ certification
 
-## 📓 Writeups
+## 📝 Writeups
 
 Documented learning experiences from platforms like TryHackMe, online courses, certification prep, and study sessions.
 
