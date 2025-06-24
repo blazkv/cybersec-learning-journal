@@ -262,6 +262,6 @@ One of the key folders inside the Windows directory is **System32**, which conta
 
 ---
 
-🔝 Back to [top](#tryhackme--pre-security)
+[🔝 Back to **top**](#tryhackme--pre-security)
 
-🔙 Back to [Writeups Overview](README.md)
+[🔙 Back to **Writeups Overview**](README.md)
