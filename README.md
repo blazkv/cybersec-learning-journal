@@ -6,15 +6,13 @@ Welcome to my cybersecurity learning journal. This is where I document my hands-
 
 ## 👋 About Me
 
-I’m an aspiring cybersecurity professional based in Slovenia, holding a degree in Information Security. I am currently focused on gaining practical, real-world skills through hands-on labs, certification preparation, and project-based learning.
+I’m an aspiring cybersecurity professional based in Slovenia with a degree in Information Security. I am actively building practical skills through hands-on labs, certification preparation, and project-based learning.
 
-Current Focus:
-- Completing TryHackMe learning paths to build practical skills
-- Building and managing home labs for Windows and Linux environments
+Current focus includes:
+- Completing TryHackMe learning paths
+- Building and managing Windows and Linux home labs
 - Pursuing the Google Cybersecurity Professional Certificate
 - Preparing for the CompTIA Security+ certification
-
-I am passionate about continuous learning and eager to contribute to security operations teams as I develop my expertise.
 
 ## 📓 Writeups
 
