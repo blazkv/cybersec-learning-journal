@@ -261,7 +261,7 @@ One of the key folders inside the Windows directory is **System32**, which conta
 *To be completed at the end of the learning path.*
 
 ---
-
+1. [🛡️ Introduction to Cyber Security](#-1-introduction-to-cyber-security)  
 🔝 Back to [top](#tryhackme--pre-security)
 
 🔙 Back to [Writeups Overview](README.md)
