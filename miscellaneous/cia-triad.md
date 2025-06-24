@@ -24,11 +24,11 @@ The triad forms the basis of designing **secure architectures**, **incident resp
 
 ## ⚙️ How It Works / Key Components
 
-- **Confidentiality controls**: Access control mechanisms (**RBAC - Role-Based Access Control**, **ABAC - Attribute-Based Access Control**), encryption standards such as **AES (Advanced Encryption Standard)** for data at rest and **TLS (Transport Layer Security)** for data in transit, and data classification schemes.
-- **Integrity controls**: Use of cryptographic hashes (**SHA-2 family**), digital signatures, checksums, and version control. Integrity validation is critical in environments with software supply chain risks or insider threats.
-- **Availability controls**: Redundancy (failover systems, RAID arrays), backup and disaster recovery plans, network resilience (DDoS mitigation technologies, load balancers), and monitoring tools like **SIEM (Security Information and Event Management)** for real-time incident detection.
+- **Confidentiality controls**: Access control mechanisms such as **RBAC (Role-Based Access Control)** and attribute-based models, encryption standards like **AES (Advanced Encryption Standard)** for data at rest and **TLS (Transport Layer Security)** for data in transit, plus data classification schemes. 
+- **Integrity controls**: Use of cryptographic hashes from the **SHA-2** family, digital signatures, checksums, and version control. Integrity validation is critical in environments vulnerable to software supply chain risks or insider threats. 
+- **Availability controls**: Redundancy methods including failover systems and disk arrays, backup and disaster recovery plans, network resilience technologies such as protection against Distributed Denial of Service (DDoS) attacks and load balancers, and monitoring tools like **SIEM (Security Information and Event Management)** for real-time incident detection. 
 
-Together, these controls must align with standards such as **ISO/IEC 27001**, **NIST Cybersecurity Framework (CSF)**, etc.
+Together, these controls must align with standards such as [ISO/IEC 27001](https://www.iso.org/standard/27001), [NIST Cybersecurity Framework (CSF)](https://www.nist.gov/cyberframework), etc.
 
 ---
 
