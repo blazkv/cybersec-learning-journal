@@ -186,7 +186,60 @@ Linux is great for efficiency — commands like `find` save time and effort:
 ---
 
 ## 🏢 5. Windows Fundamentals
+
 ### Windows Fundamentals Part 1
+
+This part of module kicks off with a brief history of Windows OS, most notably it urges you to learn about difference between Home and Pro versions. I created this table to show the most relevant differences:
+| Feature                            | Windows 11 Home                 | Windows 11 Pro                            | Why It Matters for SOC/Networking                             |
+|------------------------------------|----------------------------------|--------------------------------------------|---------------------------------------------------------------|
+| **BitLocker Encryption**           | ❌ Not available (only Device Encryption) | ✅ Full BitLocker with management tools      | Ensures disk security and supports forensic data protection   |
+| **Domain Join / Azure AD**         | ❌ Not supported                | ✅ Join Active Directory & Azure AD         | Enables centralized access control and policy enforcement     |
+| **Group Policy Editor**            | ❌ Not available                | ✅ Full access                              | Critical for pushing security configs across multiple devices |
+| **Windows Update for Business**    | ❌ Not available                | ✅ Supported                                | Allows controlled update rollouts and patch management        |
+| **Remote Desktop Host**            | ❌ Cannot host RDP sessions     | ✅ Can host Remote Desktop connections      | Supports remote incident response and admin tasks             |
+| **Hyper-V & Windows Sandbox**      | ❌ Not available                | ✅ Both supported                           | Enables safe malware analysis and isolated test environments  |
+| **Windows Information Protection** | ❌ Not available                | ✅ Included                                 | Helps prevent data leaks on enterprise systems                |
+
+The current version of the Windows operating system for servers is [Windows Server 2025](https://www.microsoft.com/en-us/windows-server/).
+
+In contrast to Linux Terminal, Windows has a GUI, which is briefly explained in this part of the module (I will not go over this here, as this is pretty surfice level information about Windows UI).
+
+Windows uses a **file system** called **New Technology File System (NTFS)**. Before that, it used **FAT16/FAT32 (File Allocation Table)** and **HPFS (High Performance File System)**. USB devices, MicroSD cards, and more still use **FAT** today, but not personal machines.
+
+**NTFS** is known as a **journaling** file system, which can, in case of failure, automatically repair folders/files by using information stored in a **log file** — something not possible with FAT.
+
+NTFS supports specific **permissions** and **compression** for folders and files. It also uses **Encryption File System (EFS)**.
+
+The module outlines how to check or **change permissions** for files, folders, or users, and explains what each permission means:
+| **Permission**           | **Meaning for Folders**                                                         | **Meaning for Files**                                     |
+| ------------------------ | ------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| **Read**                 | Permits viewing and listing of files and subfolders                             | Permits viewing or accessing the file’s contents          |
+| **Write**                | Permits adding files and subfolders                                             | Permits writing to a file                                 |
+| **Read & Execute**       | Permits viewing, listing, and executing files; inherited by files and folders   | Permits viewing, accessing, and executing the file        |
+| **List Folder Contents** | Permits viewing, listing, and executing files; inherited by folders only        | N/A                                                       |
+| **Modify**               | Permits reading and writing files and subfolders; allows deletion of the folder | Permits reading, writing, and deletion of the file        |
+| **Full Control**         | Permits reading, writing, changing, and deleting files and subfolders           | Permits reading, writing, changing, and deleting the file |
+
+NTFS also has a Windows-specific **Alternate Data Streams (ADS)** file attribute feature. Every file has at least one stream:
+- Data stream named `\$DATA`,
+- ADS allows files to contain multiple streams of data
+
+**Windows Explorer** does not natively display ADS to users, but **PowerShell** lets you view ADS for files.
+
+ADS is commonly used by **malware writers** to **hide data**, but not all uses are malicious. ADS do not affect a file’s **checksum** and are lost when the file is **compressed** (e.g., via ZIP or RAR), **Base64 encoded** (such as when sent via email), or transferred to a **FAT32**-formatted drive.
+- **checksum** verifies a file’s integrity by generating a unique digital fingerprint based on its contents.
+
+The **system environment variable** for the Windows directory is `%windir%`. According to Microsoft:
+> *Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders.*
+
+Typically, the Windows folder is located at `C:\Windows`, but not necessarily — `%windir%` ensures the correct path is used regardless of installation location.
+
+One of the key folders inside the Windows directory is **System32**, which contains critical files required for the operating system to function properly. These include:
+- **EXEs (Executable files):** Programs that run when opened, such as Task Manager (`taskmgr.exe`)
+- **DLLs (Dynamic Link Libraries):** Shared code libraries used by multiple programs to perform common functions
+- **Drivers:** Software components that allow the OS to communicate with hardware devices
+- **Windows Registry:** A central database that stores system and application settings and configurations
+
 ### Windows  Fundamentals Part 2
 ### Windows  Fundamentals Part 3
 
