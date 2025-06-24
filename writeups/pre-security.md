@@ -6,12 +6,12 @@ The **Pre Security** path on TryHackMe provides a solid foundation in cybersecur
 
 ## Table of Contents
 
-1. [🛡️ Introduction to Cyber Security](#introduction-to-cyber-security)  
-2. [📡 Network Fundamentals](#network-fundamentals)  
-3. [🌐 How the Web Works](#how-the-web-works)  
-4. [🐧 Linux Fundamentals](#linux-fundamentals)  
-5. [🏢 Windows Fundamentals](#windows-fundamentals)  
-6. [📌 Key Takeaways](#key-takeaways)
+1. [🛡️ Introduction to Cyber Security](#-1-introduction-to-cyber-security)  
+2. [📡 Network Fundamentals](#-2-network-fundamentals)  
+3. [🌐 How the Web Works](#-3-how-the-web-works)  
+4. [🐧 Linux Fundamentals](#-4-linux-fundamentals)  
+5. [🏢 Windows Fundamentals](#-5-windows-fundamentals)  
+6. [📌 Key Takeaways](#-6-key-takeaways)
 
 ---
 
