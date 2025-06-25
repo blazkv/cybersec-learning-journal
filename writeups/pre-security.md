@@ -321,8 +321,6 @@ The **System Configuration** tool (`msconfig`) helps with advanced troubleshooti
 
 The **System Summary** shows OS version, manufacturer, CPU, BIOS, and other key info.
 
----
-
 ### Windows  Fundamentals Part 3
 
 ---
