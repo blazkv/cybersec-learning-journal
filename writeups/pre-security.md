@@ -240,8 +240,7 @@ NTFS also has a Windows-specific **Alternate Data Streams (ADS)** file attribute
 ADS is commonly used by **malware writers** to **hide data**, but not all uses are malicious. ADS do not affect a file’s **checksum** and are lost when the file is **compressed** (e.g., via ZIP or RAR), **Base64 encoded** (such as when sent via email), or transferred to a **FAT32**-formatted drive.
 - **checksum** verifies a file’s integrity by generating a unique digital fingerprint based on its contents.
 
-The **system environment variable** for the Windows directory is `%windir%`. According to Microsoft:
-> *Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders.*
+The **system environment variable** for the Windows directory is `%windir%`. Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders.
 
 Typically, the Windows folder is located at `C:\Windows`, but not necessarily — `%windir%` ensures the correct path is used regardless of installation location.
 
@@ -275,7 +274,42 @@ In this part of the module, I was tasked with experimenting with the **Control P
 
 ### Windows  Fundamentals Part 2
 
+The **System Configuration** utility (`msconfig`) is used for **advanced** [troubleshooting](https://learn.microsoft.com/en-us/troubleshoot/windows-client/performance/system-configuration-utility-troubleshoot-configuration-errors), especially diagnosing **startup issues**. It includes the following tabs:
+- **General** – Select what Windows loads at boot: **Normal**, **Diagnostic**, or **Selective startup**.
+- **Boot** – Configure advanced boot options for the OS.
+- **Services** – View and enable/disable all system services, which are background applications running regardless of their current state.
+- **Startup** – Redirects to **Task Manager** in modern Windows; Microsoft recommends managing startup programs via `taskmgr` instead of `msconfig`.
 
+Key tools in **Computer Management** (`compmgmt.msc`) are all a part of the **System Configuration** and can be found in the **Tools** section. They include:
+- System Tools:
+  - **Task Scheduler** — Create and manage automated tasks triggered by events, schedules, or user actions like logon/logoff.
+  - **Event Viewer** — View detailed logs of system, security, and application events for diagnostics and auditing. **Types of events** that can be logged and their descriptions:
+
+| **Event type**    | **Description**                                                                                        |
+|-------------------|--------------------------------------------------------------------------------------------------------|
+| **Error**         | Indicates a significant problem causing loss of data or functionality, e.g., service fails at startup. |
+| **Warning**       | Indicates a possible future issue, e.g., low disk space; recoverable events are usually warnings.      |
+| **Information**   | Logs successful operations of apps, drivers, or services, e.g., network driver loaded successfully.    |
+| **Success Audit** | Records successful security access attempts, e.g., user logon succeeded.                               |
+| **Failure Audit** | Records failed security access attempts, e.g., user failed to access a network drive.                  |
+
+  - **Shared Folders** — See folders shared on the network, connected users (Sessions), and files currently open by those users.
+  - **Local Users and Groups** (`lusrmgr.msc`) — Manage local user accounts and groups.
+  - **Performance Monitor** (`perfmon`) — Monitor real-time or logged performance data to troubleshoot system resource issues. **Resource Monitor** is accessible through here or via `resmon`.
+  - **Device Manager** (`devmgmt.msc`) — View and configure hardware devices, including disabling hardware components.
+- **Storage**:
+  - **Disk Management** (`diskmgmt.msc`) — Perform storage tasks like setting up new drives, extending or shrinking partitions, and changing drive letters.
+- **Services and Applications**:
+  - Manage background services beyond enabling/disabling by viewing detailed properties.
+  - **WMI Control** — Configure the Windows Management Instrumentation service, which supports scripting and remote management. The older **WMIC** tool is deprecated; **PowerShell** replaces it for **WMI tasks**.
+
+**System Information** (`msinfo32.exe`) is a Windows tool that **displays detailed specs** about your **system**. It organizes data into three categories:
+- **Hardware Resources** (more about it [here](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/hardware-resources))
+- **Components** – Devices like storage, display, and input
+- **Software Environment** – Drivers, running tasks, services, etc.
+  - Includes **Environment Variables**, which store **OS-level data** like system paths, processor count, and temp folder locations. For example, `WINDIR` points to the Windows install directory, allowing programs to locate system files.
+
+The **System Summary** shows key system info like OS version, manufacturer, processor, and BIOS details.
 
 ### Windows  Fundamentals Part 3
 
