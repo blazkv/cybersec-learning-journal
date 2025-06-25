@@ -287,6 +287,8 @@ The **System Configuration** tool (`msconfig`) helps with advanced troubleshooti
 - **Services**: View/enable/disable system background services.
 - **Startup**: Redirects to Task Manager in newer Windows versions for managing startup apps.
 
+Many key system tools can also be launched from **System Configuration**, including **Computer Management**, **System Information**, **Command Prompt**, and the **Windows Registry Editor**. These are commonly used in Security Operations Center (SOC) workflows for analysis, diagnostics, and system investigation.
+
 **Computer Management** (`compmgmt.msc`) consolidates many admin tools:
 
 - **System Tools**:
@@ -303,7 +305,7 @@ The **System Configuration** tool (`msconfig`) helps with advanced troubleshooti
 
   - **Shared Folders**: Manage network shares and sessions.
   - **Local Users and Groups**: User/group management.
-  - **Performance Monitor** (`perfmon`): Track system resource use; **Resource Monitor** (`resmon`) available here too.
+  - **Performance Monitor** (`perfmon`): Track system resource use; `Resource Monitor` (`resmon`) available here too.
   - **Device Manager** (`devmgmt.msc`): View/configure hardware devices.
 
 - **Storage**:
@@ -312,7 +314,7 @@ The **System Configuration** tool (`msconfig`) helps with advanced troubleshooti
 - **Services and Applications**:
   - Manage background services and their properties.
   - **WMI Control**: Configure Windows Management Instrumentation.  
-  - **WMIC** is deprecated; use **PowerShell** for WMI tasks.
+  - `WMIC` is deprecated; use `PowerShell` for WMI tasks.
 
 **System Information** (`msinfo32.exe`) provides detailed system specs in categories:
 - **Hardware Resources**
@@ -320,6 +322,28 @@ The **System Configuration** tool (`msconfig`) helps with advanced troubleshooti
 - **Software Environment** (drivers, running tasks, services, environment variables)
 
 The **System Summary** shows OS version, manufacturer, CPU, BIOS, and other key info.
+
+Another commonly used tool is the **Command Prompt** (`cmd`). Like the Linux terminal, it's a non-GUI interface used for system-level interaction. It's especially useful for troubleshooting and quick diagnostics.
+
+- `hostname` shows the computer's name.
+- `whoami` returns the current user context.
+- `ipconfig` displays IP configuration details.
+- `/?` shows the help manual for a command (e.g., `ipconfig /?`).
+- `cls` clears the screen.
+- `netstat` lists active connections and protocol stats.
+- `net` manages network resources.  
+  - Running `net` alone displays the available sub-commands.  
+  - `/?` doesn't work with `net`; use `net help` or `net <sub-command> help`.
+
+Another key tool is the **Windows Registry** (`regedit`). It's a hierarchical database the system uses to store persistent configuration data for users, software, and hardware. Understanding the registry is useful when investigating configuration issues or persistent system behavior.
+
+- Stores user profile data.
+- Tracks installed applications and file associations.
+- Manages UI settings like folder and icon behavior.
+- Lists hardware recognized by the system.
+- Contains port and device-level configuration data.
+
+Having a solid understanding of where these tools live and what they reveal is essential for real-world triage and investigation workflows.
 
 ### Windows  Fundamentals Part 3
 
