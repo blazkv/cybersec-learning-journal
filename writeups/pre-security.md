@@ -85,25 +85,25 @@ There is additional locked content within this course, which I will list under e
 ### **DNS in Detail**
 
 Studied the **Domain Name System (DNS)**, which translates domain names into IP addresses.
-* Domains structured as **Top-Level Domain (TLD)**, **Second-Level Domain**, and optional **subdomains**.
-* Key **DNS record types**:
-  * `A` (IPv4), `AAAA` (IPv6), `CNAME` (alias), `MX` (mail), and `TXT` (text, verification).
-* DNS resolution flow:
-  * Local cache → ISP recursive DNS → Root servers → TLD servers → Authoritative servers.
-  * Results cached according to **TTL (Time To Live)**.
-* Hands-on practice using `nslookup` to query DNS records.
+- Domains structured as **Top-Level Domain (TLD)**, **Second-Level Domain**, and optional **subdomains**.
+- Key **DNS record types**:
+ - `A` (IPv4), `AAAA` (IPv6), `CNAME` (alias), `MX` (mail), and `TXT` (text, verification).
+- DNS resolution flow:
+ - Local cache → ISP recursive DNS → Root servers → TLD servers → Authoritative servers.
+ - Results cached according to **TTL (Time To Live)**.
+- Hands-on practice using `nslookup` to query DNS records.
 
 ### **HTTP in Detail**
 
 Covered **HTTP (HyperText Transfer Protocol)** and **HTTPS (HTTP Secure)** protocols.
-* HTTP transmits data in plaintext; HTTPS secures data using **TLS (Transport Layer Security)** encryption.
-* Reviewed HTTP methods:
-  * `GET`, `POST`, `PUT`, `DELETE` specify client-server actions.
+- HTTP transmits data in plaintext; HTTPS secures data using **TLS (Transport Layer Security)** encryption.
+- Reviewed HTTP methods:
+  - `GET`, `POST`, `PUT`, `DELETE` specify client-server actions.
 * Analyzed common HTTP status codes:
-  * `200 OK`, `404 Not Found`, `403 Forbidden`, `301/302 Redirect`, `500 Internal Server Error`.
-* Compared request and response headers:
-  * Requests include `Host`, `User-Agent`, `Cookie`.
-  * Responses include `Set-Cookie`, `Content-Type`, `Cache-Control`.
+  - `200 OK`, `404 Not Found`, `403 Forbidden`, `301/302 Redirect`, `500 Internal Server Error`.
+- Compared request and response headers:
+  - Requests include `Host`, `User-Agent`, `Cookie`.
+  - Responses include `Set-Cookie`, `Content-Type`, `Cache-Control`.
 
 ### **How Websites Work**
 
@@ -135,10 +135,10 @@ Finally, the task introduced **HTML injection** — a **client-side vulnerabilit
 When you **request a website**, your computer must determine the **IP address** of the web server it needs to communicate with. This is handled by the **DNS**, which translates human-readable domain names into numerical IP addresses. Once the IP is resolved, your computer establishes a connection and communicates with the web server using the **HTTP** — a standardized set of rules for data exchange. The server responds by sending resources such as **HTML**, **CSS**, **JavaScript**, and **images**, which the **browser** uses to properly **render and display the website** to the user.
 
 To support scalability, performance, and security, modern web applications often use additional infrastructure:
-* **Load Balancers** distribute incoming traffic across multiple servers using algorithms like **round-robin** or **least connections**, ensuring **high availability** and automatic **failover** through periodic **health checks**.
-* **CDNs (Content Delivery Networks)** cache and serve static assets (e.g., JavaScript, CSS, images) from geographically distributed nodes to reduce latency and server load.
-* **Databases** store and retrieve user and application data, ranging from simple flat files to complex systems like **MySQL**, **Postgres**, or **MongoDB**, supporting both performance and redundancy.
-* **WAFs (Web Application Firewalls)** act as a protective layer between users and web servers, filtering out malicious traffic using **rate limiting**, **signature-based detection**, and **bot filtering**.
+- **Load Balancers** distribute incoming traffic across multiple servers using algorithms like **round-robin** or **least connections**, ensuring **high availability** and automatic **failover** through periodic **health checks**.
+- **CDNs (Content Delivery Networks)** cache and serve static assets (e.g., JavaScript, CSS, images) from geographically distributed nodes to reduce latency and server load.
+- **Databases** store and retrieve user and application data, ranging from simple flat files to complex systems like **MySQL**, **Postgres**, or **MongoDB**, supporting both performance and redundancy.
+- **WAFs (Web Application Firewalls)** act as a protective layer between users and web servers, filtering out malicious traffic using **rate limiting**, **signature-based detection**, and **bot filtering**.
 
 A **web server** is software (e.g., **Apache**, **Nginx**, **IIS**, **NodeJS**) that listens for incoming connections and serves content over **HTTP** from a defined **root directory** (e.g., `/var/www/html` or `C:\inetpub\wwwroot`). When a client requests a file, the server maps the URL path to a local file and returns it.
 * **Virtual Hosts** allow one server to host multiple domain names by matching the requested hostname to configuration files, each with its own root directory.
@@ -251,7 +251,32 @@ One of the key folders inside the Windows directory is **System32**, which conta
 - **Drivers:** Software components that allow the OS to communicate with hardware devices
 - **Windows Registry:** A central database that stores system and application settings and configurations
 
+Windows local accounts are typically either **Administrator** or **Standard User**:
+- **Administrators** can manage system settings, users, groups, and install software
+- **Standard Users** have limited access and can only modify their own files and folders
+
+To view users and groups, open **Run** (`Win + R`) and type `lusrmgr.msc` to launch **Local Users and Groups**.
+
+Users are added to groups by an Administrator and **inherit the group's permissions**. A user can belong to **multiple groups**, accumulating the associated privileges.
+
+To reduce risk, Microsoft introduced **User Account Control (UAC)** in **Windows Vista** to limit the impact of **malware** by requiring consent for **elevated actions**.
+
+Most users run as **local administrators**, which gives malware system-level access if infected. Yet, **elevated privileges** aren’t needed for common tasks like browsing or editing documents.
+Note: **UAC** doesn’t apply to the **built-in Administrator** account by default.
+
+**User Account Control (UAC)** works by running administrator accounts with **standard user privileges** by default.
+
+When a task requires elevated permissions—like installing software—**UAC** triggers a prompt asking the user to confirm or provide credentials. This is the basis of the **"Run as Administrator"** function, which explicitly elevates the process with admin rights if approved.
+
+In this part of the module, I was tasked with experimenting with the **Control Panel** and later the **Task Manager**:
+- On a Windows system, the primary locations to make changes are the **Settings** menu and the **Control Panel**
+- The **Settings** menu was introduced in **Windows 8** and is more user-friendly
+- The **Task Manager** (`Ctrl + Shift + Esc`) provides information about applications and processes currently running. It also shows resource usage, such as **CPU** and **RAM**, under the **Performance** tab
+
 ### Windows  Fundamentals Part 2
+
+
+
 ### Windows  Fundamentals Part 3
 
 ---
