@@ -114,24 +114,29 @@ Covered the basics of **HTTP (HyperText Transfer Protocol)** and **HTTPS (HTTP S
 
 ### How Websites Work
 
-This section explained how browsers interact with web servers.
+Browsers interact with web servers by sending **requests**. The server processes these requests and sends back **data** that the browser uses to render the webpage.
 
-- When visiting a website, a browser sends a **request** to a **web server**, which processes the request and sends back **data** that the browser uses to **render the webpage**.
-- Websites consist of two main components:
-  - **Front End (Client-side)**: The user interface and presentation layer displayed in the browser.
-  - **Back End (Server-side)**: Handles application logic, processes requests, and returns responses.
-- Web content primarily uses **HTML (HyperText Markup Language)**, **CSS**, and **JavaScript**:
-  - HTML structures content using tags such as `<html>`, `<body>`, and `<p>`, starting with a `<!DOCTYPE html>` declaration.
-  - Tags may include attributes, e.g., `<p attribute1="value1" attribute2="value2">`.
-  - CSS styles the page, while JavaScript adds interactivity.
-- I have experience with the **MERN stack** and using HTML, CSS, and JavaScript from previous projects.
-- Practiced viewing page source code using browser tools like “View Page Source.”
-- JavaScript can be embedded directly using `<script>` tags or linked externally via `<script src="/path/to/file.js"></script>`.
-- Applied JavaScript to dynamically modify page content using `document.getElementById("demo").innerHTML`.
-- Security considerations emphasized avoiding **exposure of sensitive data** such as credentials or tokens in the source code.
-- Inspected a mock website to find exposed credentials, which I then used to log into the **TryHackMe** platform.
-- Learned about **HTML injection**, a client-side vulnerability where unsanitized user input can inject malicious HTML or JavaScript into the DOM.
-- Simulated an injection attack by submitting an `<a>` tag that redirected users to a malicious site, demonstrating the risk of improper input validation.
+Websites consist of two main components:
+
+- **Front End (Client-side):** The user interface displayed in the browser.
+- **Back End (Server-side):** Handles application logic and processes requests.
+
+Web content mainly uses **HTML (HyperText Markup Language)**, **CSS**, and **JavaScript**. HTML provides the page structure using tags like `<!DOCTYPE html>`, `<html>`, `<body>`, and `<p>`. Tags can include attributes, for example, `<p attribute1="value1" attribute2="value2">`. CSS styles the page, while JavaScript adds interactivity.
+
+I have experience with the **MERN stack** and have worked with HTML, CSS, and JavaScript in previous projects. In this module, I practiced viewing page source code using browser tools like “View Page Source” to better understand website construction.
+
+JavaScript can be included in two ways:
+
+- Embedded directly in HTML using `<script>` tags.
+- Linked externally via `<script src="/path/to/file.js"></script>`.
+
+For example, JavaScript can dynamically change page content: `document.getElementById("demo").innerHTML`.
+
+Security considerations emphasized avoiding **exposure of sensitive data**, such as credentials or tokens, in the source code.
+
+I inspected a mock website to find exposed credentials, which I then used to log into the **TryHackMe** platform.
+
+I also learned about **HTML injection**, a client-side vulnerability where unsanitized user input can inject malicious HTML or JavaScript into the DOM. To demonstrate this risk, I simulated an injection attack by submitting an `<a>` tag that redirected users to a malicious site, showing the danger of improper input validation.
 
 ### Putting it all together
 
@@ -221,15 +226,15 @@ These fundamentals are critical for efficient navigation and file manipulation i
 
 This module section started with a brief history of Windows OS, highlighting important differences between **Windows Home** and **Pro** editions. Here’s a summary table of key differences relevant to SOC and networking:
 
-| Feature                            | Windows 11 Home                 | Windows 11 Pro                            | Why It Matters for SOC/Networking                             |
-|----------------------------------|--------------------------------|------------------------------------------|--------------------------------------------------------------|
-| **BitLocker Encryption**          | ❌ Not available (only Device Encryption) | ✅ Full BitLocker with management tools   | Ensures disk security and supports forensic data protection  |
-| **Domain Join / Azure AD**        | ❌ Not supported                | ✅ Join Active Directory & Azure AD       | Enables centralized access control and policy enforcement    |
-| **Group Policy Editor**           | ❌ Not available                | ✅ Full access                            | Critical for pushing security configurations across devices  |
-| **Windows Update for Business**   | ❌ Not available                | ✅ Supported                             | Allows controlled update rollouts and patch management       |
-| **Remote Desktop Host**           | ❌ Cannot host RDP sessions     | ✅ Can host Remote Desktop connections    | Supports remote incident response and admin tasks            |
-| **Hyper-V & Windows Sandbox**     | ❌ Not available                | ✅ Both supported                        | Enables safe malware analysis and isolated testing environments |
-| **Windows Information Protection** | ❌ Not available              | ✅ Included                             | Helps prevent data leaks on enterprise systems               |
+| Feature                            | Windows 11 Home | Windows 11 Pro  | Why It Matters for Cybersecurity Professionals                  |
+|------------------------------------|:---------------:|:---------------:|-----------------------------------------------------------------|
+| **BitLocker Encryption**           | ❌              | ✅             | Ensures disk security and supports forensic data protection     |
+| **Domain Join / Azure AD**         | ❌              | ✅             | Enables centralized access control and policy enforcement       |
+| **Group Policy Editor**            | ❌              | ✅             | Critical for pushing security configurations across devices     |
+| **Windows Update for Business**    | ❌              | ✅             | Allows controlled update rollouts and patch management          |
+| **Remote Desktop Host**            | ❌              | ✅             | Supports remote incident response and administrative tasks      |
+| **Hyper-V & Windows Sandbox**      | ❌              | ✅             | Enables safe malware analysis and isolated testing environments |
+| **Windows Information Protection** | ❌              | ✅             | Helps prevent data leaks on enterprise systems                  |
 
 The current Windows Server OS is **Windows Server 2025**.
 
@@ -241,14 +246,14 @@ Windows uses the **NTFS (New Technology File System)** for its file system, whic
 
 File/Folder permissions define what users can do:
 
-| **Permission**           | **Folders**                                         | **Files**                                        |
-|-------------------------|----------------------------------------------------|-------------------------------------------------|
-| **Read**                 | View/list files and subfolders                      | View/access file contents                         |
-| **Write**                | Add files/subfolders                                | Write to the file                                 |
-| **Read & Execute**       | View, list, and execute files (inherited)          | View, access, and execute the file                |
-| **List Folder Contents** | View, list, and execute files (folders only)        | N/A                                              |
-| **Modify**               | Read, write, delete files/folders                   | Read, write, and delete file                      |
-| **Full Control**         | Read, write, modify, and delete files/folders      | Read, write, modify, and delete the file          |
+| **Permission**           | **Folders**                                   | **Files**                                |
+|--------------------------|-----------------------------------------------|------------------------------------------|
+| **Read**                 | View/list files and subfolders                | View/access file contents                |
+| **Write**                | Add files/subfolders                          | Write to the file                        |
+| **Read & Execute**       | View, list, and execute files (inherited)     | View, access, and execute the file       |
+| **List Folder Contents** | View, list, and execute files (folders only)  | N/A                                      |
+| **Modify**               | Read, write, delete files/folders             | Read, write, and delete file             |
+| **Full Control**         | Read, write, modify, and delete files/folders | Read, write, modify, and delete the file |
 
 **Alternate Data Streams (ADS)** in NTFS allow a file to contain multiple streams of data, not just the main `\$DATA` stream. ADS can be used to hide data (often by malware), and they do not affect file checksums. However, ADS are lost if files are compressed (ZIP, RAR), Base64 encoded, or moved to FAT32 drives.
 
@@ -288,13 +293,13 @@ The **System Configuration** tool (`msconfig`) helps with advanced troubleshooti
   - **Task Scheduler**: Automate tasks triggered by events or schedules.
   - **Event Viewer**: Logs detailed system, security, and application events:
 
-| Event Type       | Description                                                 |
-|------------------|-------------------------------------------------------------|
-| **Error**        | Critical failures causing loss of function/data             |
-| **Warning**      | Potential issues, e.g., low disk space                       |
-| **Information**  | Successful operations, e.g., driver loaded                   |
-| **Success Audit**| Successful security access, e.g., user logon                 |
-| **Failure Audit**| Failed security access attempts                               |
+| Event Type       | Description                                     |
+|------------------|-------------------------------------------------|
+| **Error**        | Critical failures causing loss of function/data |
+| **Warning**      | Potential issues, e.g., low disk space          |
+| **Information**  | Successful operations, e.g., driver loaded      |
+| **Success Audit**| Successful security access, e.g., user logon    |
+| **Failure Audit**| Failed security access attempts                 |
 
   - **Shared Folders**: Manage network shares and sessions.
   - **Local Users and Groups**: User/group management.
