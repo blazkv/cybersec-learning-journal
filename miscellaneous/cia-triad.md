@@ -1,6 +1,6 @@
 # Confidentiality, Integrity & Availability (CIA) Triad
 
-## 📝 Definition
+## Definition
 
 The **CIA Triad** is the foundational model for information security, representing the three core principles essential to protecting data and systems:
 - **Confidentiality**: Ensuring information is accessible only to authorized users and processes, **preventing unauthorized disclosure**.
@@ -11,7 +11,7 @@ As defined by the **National Institute of Standards and Technology (NIST)** in *
 
 ---
 
-## ❗ Why It Matters
+## Why It Matters
 
 In cybersecurity operations, failing to uphold any component of the CIA triad leads to **operational risk** and **potential business impact**:
 - **Breaches of Confidentiality** can cause data leaks, intellectual property loss, and regulatory non-compliance (e.g., GDPR, HIPAA).
@@ -22,7 +22,7 @@ The triad forms the basis of designing **secure architectures**, **incident resp
 
 ---
 
-## ⚙️ How It Works / Key Components
+## How It Works / Key Components
 
 - **Confidentiality controls**: Access control mechanisms such as **RBAC (Role-Based Access Control)** and attribute-based models, encryption standards like **AES (Advanced Encryption Standard)** for data at rest and **TLS (Transport Layer Security)** for data in transit, plus data classification schemes. 
 - **Integrity controls**: Use of cryptographic hashes from the **SHA-2** family, digital signatures, checksums, and version control. Integrity validation is critical in environments vulnerable to software supply chain risks or insider threats. 
@@ -32,7 +32,7 @@ Together, these controls must align with standards such as [ISO/IEC 27001](https
 
 ---
 
-## 🔍 Real-World Examples
+## Real-World Examples
 
 In the **November 2023 Holding Slovenske elektrarne** ransomware attack, attackers compromised the availability of critical energy infrastructure by encrypting systems and demanding ransom. This not only disrupted operations but also threatened integrity, as tampered data could mislead grid management systems. The incident underscored the importance of:
 - **Robust backup** strategies and offline recovery points (to restore availability).
@@ -43,7 +43,7 @@ This case also highlighted the need for incident response plans to quickly resto
 
 ---
 
-## ⚠️ Challenges / Common Pitfalls
+## Challenges / Common Pitfalls
 
 - Overemphasis on one component (e.g., availability) at the expense of confidentiality or integrity, leading to imbalanced risk exposure.
 - Misconfiguration of access controls, such as excessive permissions or failure to revoke access, undermining confidentiality.
