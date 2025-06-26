@@ -4,7 +4,7 @@ This folder contains detailed notes, summaries, and walkthroughs of cybersecurit
 
 | Title | Description |
 |-------|-------------|
-| [TryHackMe - Pre Security](pre-security.md) | A high-level overview and personal notes on the Pre Security path from TryHackMe, covering cybersecurity fundamentals through hands-on simulations and beginner-friendly modules. |
+| [TryHackMe - Pre Security](pre-security.md) | An engaging, beginner-friendly path that builds the foundational technical knowledge needed to start a career in cyber security. |
 
 ---
 
