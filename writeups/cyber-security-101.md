@@ -15,6 +15,6 @@
 
 ---
 
-[🔝 Back to **top**](#tryhackme-pre-security)
+[🔝 Back to **top**](#tryhackme-cyber-security-101)
 
 [🔙 Back to **Writeups Overview**](README.md)
