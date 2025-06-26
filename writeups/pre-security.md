@@ -1,4 +1,4 @@
-# TryHackMe – Pre Security
+# TryHackMe Pre Security
 
 The **Pre Security** path on **TryHackMe** is designed to build foundational knowledge in cybersecurity. It covers essential topics such as networking, operating systems, and web technologies — all crucial for anyone starting out in the field.
 
