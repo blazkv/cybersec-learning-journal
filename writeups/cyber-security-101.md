@@ -8,8 +8,8 @@ I’m progressing through this path to build a strong base, sharpen my hands-on 
 
 ## Table of Contents
 
-1. [🚀 Start Your Cyber Security Journey](#%F0%9F%9A%80-1-start-your-cyber-security-journey)
-2. [🐧 Linux Fundamentals](#%F0%9F%90%A7-2-linux-fundamentals)
+1. [🚀 Start Your Cyber Security Journey](#-1-start-your-cyber-security-journey)
+2. [🐧 Linux Fundamentals](#-2-linux-fundamentals)
 3. [🏢 Windows and AD Fundamentals](#%F0%9F%8F%A2-3-windows-and-ad-fundamentals)
 4. [💻 Command Line](#%F0%9F%92%BB-4-command-line)
 5. [🌐 Networking](#%F0%9F%8C%90-5-networking)
