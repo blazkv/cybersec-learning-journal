@@ -1,6 +1,6 @@
 # NIST Cybersecurity Framework (CSF)
 
-## 📝 Definition
+## Definition
 
 The [NIST CSF](https://www.nist.gov/cyberframework) is primarily a **risk management** tool designed to help organizations identify, assess, and reduce cybersecurity risks in a structured, flexible, and repeatable way. Rather than focusing solely on specific technical controls, it aligns cybersecurity efforts with an organization’s unique risk tolerance and business objectives.
 
@@ -8,7 +8,7 @@ Organized around five core functions, **Identify**, **Protect**, **Detect**, **R
 
 ---
 
-## ❗ Why It Matters
+## Why It Matters
 
 It is important because it provides organizations with a common language and systematic approach to managing cybersecurity risks. Without a structured framework, organizations may struggle to prioritize security investments or respond effectively to incidents.
 
@@ -18,7 +18,7 @@ Additionally, the CSF promotes **communication** and **coordination** across dep
 
 ---
 
-## ⚙️ How It Works / Core Components
+## How It Works / Core Components
 
 The NIST CSF is made up of six **core functions** that define how organizations manage cybersecurity risks throughout their lifecycle. Each function represents a strategic area of focus that works in concert with the others.
 
@@ -37,7 +37,7 @@ The CSF is also a valuable resource for continued learning. It links to other we
 
 ---
 
-## 🔍 Real-World Applications
+## Real-World Applications
 
 In practice, the NIST CSF is highly adaptable and widely used across industries to structure cybersecurity programs in a way that aligns with their unique **risks** and **business priorities**.
 
@@ -49,13 +49,13 @@ Beyond operational use, many organizations integrate the CSF into their ISMS, us
 
 ---
 
-## ⚠️ Challenges / Common Pitfalls
+## Challenges / Common Pitfalls
 
 A common challenge when using the NIST CSF is treating it as just a **checklist** for compliance instead of a **flexible framework** that should evolve with the organization’s **risks**. This often leads to implementing controls that don’t effectively reduce real **threats**. Another issue is failing to connect CSF activities directly to the organization’s **business goals** and **risk tolerance**. Without this link, security efforts may focus on less important areas while **critical risks** remain unaddressed. Many organizations also struggle with keeping their cybersecurity program **up to date** because they do not continuously **monitor** or **reassess** their controls. This can leave them vulnerable to new **attack methods**. Finally, it is important to integrate the CSF with other relevant **standards** and **regulations** such as **GDPR** or **ISO 27001**. Ignoring this can cause gaps in security and compliance that SOC teams must watch for. For junior SOC personnel, understanding these pitfalls is essential for helping maintain an effective, **risk-focused** cybersecurity program.
 
 ---
 
-## 📌 Disclaimer
+## Disclaimer
 
 The NIST CSF is a broad and evolving topic, and this writeup captures only a snapshot of my current understanding. While this summary highlights key concepts and reflections, I recognize there is much more to explore. Moving forward, I plan to deepen my knowledge by working directly with the CSF documentation, applying it in mock security information and event management (SIEM) exercises, and continuing my learning journey in cybersecurity.
 
