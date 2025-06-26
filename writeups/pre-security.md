@@ -76,10 +76,14 @@ Networking tools:
 
 Remaining topics in this module are locked behind a **TryHackMe Premium** subscription:
 
-- **Introduction to LAN**
+- **Intro to LAN**
+*Learn about some of the technologies and designs that power private networks.*
 - **OSI Model**
+*Learn about the fundamental networking framework that determines the various stages in which data is handled across a network.*
 - **Packets & Frames**
+*Understand how data is divided into smaller pieces and transmitted across a network to another device.*
 - **Extending Your Network**
+*Learn about some of the technologies used to extend networks out onto the Internet and the motivations for this.*
 
 There is additional locked content throughout this course, which I will note under each relevant section. I plan to **revisit these important topics** later through independent research.
 
@@ -216,7 +220,9 @@ These fundamentals are critical for efficient navigation and file manipulation i
 ### Premium-Only Content
 
 - **Linux Fundamentals Part 2**
+*Continue your learning Linux journey with part two. You will be learning how to log in to a Linux machine using SSH, how to advance your commands, file system interaction.*
 - **Linux Fundamentals Part 3**
+*Power-up your Linux skills and get hands-on with some common utilities that you are likely to use day-to-day!*
 
 ---
 
