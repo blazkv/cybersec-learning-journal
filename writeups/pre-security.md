@@ -359,7 +359,49 @@ Another key tool is the **Windows Registry** (`regedit`). It's a hierarchical da
 
 Having a solid understanding of where these tools live and what they reveal is essential for real-world triage and investigation workflows.
 
-### Windows  Fundamentals Part 3
+### Windows Fundamentals Part 3
+
+This part of the course covers essential **services** provided by Windows to ensure system protection, stability, and data integrity.
+
+**Windows Update** delivers security patches, feature enhancements, and OS updates for both Windows and Microsoft products like **Microsoft Defender**. Some updates require a **system restart**, which users often postponed, increasing risk exposure. Starting with **Windows 10**, Microsoft introduced improvements that reduced manual deferral and encouraged timely patching.
+
+**Windows Security** is the central hub for built-in **security tools** that help protect the system and user data. It covers several key areas:
+
+- **Virus & threat protection**, which is divided into two main sections:
+  - **Current threats** — includes **Scan options** (Quick, Full, or Custom), and **Threat history** (Last scan, Quarantined threats, Allowed threats).
+  - **Virus & threat protection settings** — includes:
+    - **Real-time protection** (active malware defense)
+    - **Cloud-delivered protection** (access to the latest intelligence from the Microsoft cloud)
+    - **Automatic sample submission** (sends suspicious files for analysis)
+    - **Controlled folder access** (blocks unauthorized changes to files by untrusted apps)
+    - **Exclusions** (excluded files/folders are not scanned by **Windows Defender Antivirus**)
+    - **Notifications** (alerts about detected threats and security status)
+
+- **Firewall & network protection** is divided into:
+  - **Domain network**
+  - **Private network**
+  - **Public network**
+
+  Windows Firewall supports three profile types:
+  - **Domain** — used when the device can authenticate with a domain controller.
+  - **Private** — for home or trusted networks set by the user.
+  - **Public** — the default profile for open or untrusted networks (e.g., airports, cafes).
+
+- **App & browser control** manages **Microsoft Defender SmartScreen**, which helps protect against **phishing**, **malware**, and the downloading of potentially **malicious files** or apps.
+
+- **Device security** includes:
+  - **Memory Integrity** — helps prevent attackers from injecting **malicious code** into **high-privilege processes**.
+  - **Security processor (TPM - Trusted Platform Module)** — a hardware-based **crypto-processor** that performs **encryption** and **integrity checks**, and helps resist physical tampering.
+
+**BitLocker Drive Encryption** is a **data protection** feature built into Windows that secures data in case of **device loss** or **theft**. It integrates directly with the OS and, when combined with a **TPM chip**, offers stronger protection. BitLocker helps mitigate risks related to unauthorized data access on decommissioned or stolen machines. More technical detail available [here](https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/).
+
+The **Volume Shadow Copy Service (VSS)** creates consistent **point-in-time snapshots** of data—commonly referred to as shadow copies. These are stored in the **System Volume Information** folder and support the following actions:
+- Create and manage restore points
+- Perform system restore operations
+- Configure restore settings
+- Delete existing restore points
+
+Because shadow copies can be used to roll back malware or recover data, **malware authors** often include functionality to detect and delete VSS files to prevent recovery. This makes securing and monitoring VSS usage important in **SOC triage** and **malware analysis workflows**.
 
 ---
 
