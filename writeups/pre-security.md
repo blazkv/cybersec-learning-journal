@@ -8,15 +8,15 @@ I’m working through this path to reinforce my understanding, fill any gaps, an
 
 ## Table of Contents
 
-1. [🛡️ Introduction to Cyber Security](#%EF%B8%8F-1-introduction-to-cyber-security)
-2. [📡 Network Fundamentals](#-2-network-fundamentals)  
-3. [🌐 How the Web Works](#-3-how-the-web-works)  
-4. [🐧 Linux Fundamentals](#-4-linux-fundamentals)  
-5. [🏢 Windows Fundamentals](#-5-windows-fundamentals)  
+1. [Introduction to Cyber Security](#%EF%B8%8F-1-introduction-to-cyber-security)
+2. [Network Fundamentals](#-2-network-fundamentals)  
+3. [How the Web Works](#-3-how-the-web-works)  
+4. [Linux Fundamentals](#-4-linux-fundamentals)  
+5. [Windows Fundamentals](#-5-windows-fundamentals)  
 
 ---
 
-## 🛡️ 1. Introduction to Cyber Security
+## 1. Introduction to Cyber Security
 
 ### Offensive Security Intro
 
@@ -46,7 +46,7 @@ This section covered **Defensive Security**, aligned with **Blue Team** activiti
 
 ---
 
-## 📡 2. Network Fundamentals
+## 2. Network Fundamentals
 
 ### What is Networking?
 
@@ -94,7 +94,7 @@ There is additional locked content throughout this course, which I will note und
 
 ---
 
-## 🌐 3. How the Web Works
+## 3. How the Web Works
 
 ### DNS in Detail
 
@@ -177,7 +177,7 @@ For the final exercise, I ordered the steps of a website request:
 
 ---
 
-## 🐧 4. Linux Fundamentals
+## 4. Linux Fundamentals
 
 ### Linux Fundamentals Part 1
 
@@ -234,7 +234,7 @@ These fundamentals are critical for efficient navigation and file manipulation i
 
 ---
 
-## 🏢 5. Windows Fundamentals
+## 5. Windows Fundamentals
 
 ### Windows Fundamentals Part 1
 
