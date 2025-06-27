@@ -4,8 +4,8 @@ This folder contains detailed notes, summaries, and walkthroughs of cybersecurit
 
 | Title | Description |
 |-------|-------------|
-| [TryHackMe Pre Security](pre-security.md) | An engaging, beginner-friendly path that builds the foundational technical knowledge needed to start a career in cyber security. |
-| [TryHackMe Cyber Security 101](cyber-security-101.md) | An engaging, beginner-friendly path that builds the foundational technical knowledge needed to start a career in cyber security. |
+| [TryHackMe Pre Security](pre-security.md) | Covers foundational technical concepts needed to begin a cyber security career. Focuses on understanding how technologies work to enable effective attack or defense strategies. Beginner-friendly introduction to core principles. |
+| [TryHackMe Cyber Security 101](cyber-security-101.md) | Introduces key areas of Computer Security, including networking, cryptography, Windows, Active Directory, Linux basics, offensive tools, system exploitation, defensive solutions, and career paths. Beginner-focused and practical. |
 
 ---
 
