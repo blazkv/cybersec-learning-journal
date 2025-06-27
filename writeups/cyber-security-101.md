@@ -75,7 +75,7 @@ I’ve already completed and documented **Linux Fundamentals Part 1** in [Pre Se
 
 ## 3. Windows and AD Fundamentals
 
-I’ve also already documented **Windows Fundamentals Parts 1–3** in [Pre Security – Windows Fundamentals](pre-security.md#3-windows-fundamentals).
+I’ve also already documented **Windows Fundamentals Parts 1–3** in [Pre Security – Windows Fundamentals](pre-security.md#5-windows-fundamentals).
 
 ---
 
