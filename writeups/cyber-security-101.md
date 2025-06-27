@@ -28,7 +28,7 @@ I’m progressing through this path to build a strong base, sharpen my hands-on 
 
 ### Offensive Security Intro and Defensive Security Intro
 
-This module started with **Offensive Security Intro** and **Defensive Security Intro** rooms, which I’ve already documented in [Pre Security](pre-security.md).
+This module started with **Offensive Security Intro** and **Defensive Security Intro** rooms, which I’ve already documented in [Pre Security – Linux Fundamentals](pre-security.md#4-linux-fundamentals).
 
 ### Search Skills
 
@@ -74,6 +74,8 @@ I’ve already completed and documented **Linux Fundamentals Part 1** in [Pre Se
 ---
 
 ## 3. Windows and AD Fundamentals
+
+I’ve also already documented **Windows Fundamentals Parts 1–3** in [Pre Security – Windows Fundamentals](pre-security.md#3-windows-fundamentals).
 
 ---
 
