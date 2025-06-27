@@ -28,7 +28,7 @@ I’m progressing through this path to build a strong base, sharpen my hands-on 
 
 ### Offensive Security Intro and Defensive Security Intro
 
-This module started with **Offensive Security Intro** and **Defensive Security Intro**, which I’ve already covered in [Pre Security](../pre-security.md).
+This module started with **Offensive Security Intro** and **Defensive Security Intro** rooms, which I’ve already documented in [Pre Security](pre-security.md).
 
 ### Search Skills
 
@@ -69,7 +69,7 @@ The room wraps up with advice on **social media investigation**. It’s wise to 
 
 ## 2. Linux Fundamentals
 
-This module is also split into three rooms. I’ve already completed **Linux Fundamentals Part 1** in [Pre Security](../pre-security.md), with **Part 2** and **Part 3** being unlocked behind **TryHackMe Premium**.
+I’ve already completed and documented **Linux Fundamentals Part 1** in [Pre Security](pre-security.md), with **Part 2** and **Part 3** being unlocked behind **TryHackMe Premium**.
 
 ---
 
