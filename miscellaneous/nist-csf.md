@@ -1,4 +1,4 @@
-# The NIST Cybersecurity Framework
+# NIST Cybersecurity Framework
 
 ## Definition
 
