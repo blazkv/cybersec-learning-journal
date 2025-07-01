@@ -1,8 +1,8 @@
-# Authentication, Authorization, Accounting (AAA)
+# Authentication, Authorization & Accounting
 
 ## Definition
 
-**AAA** form a foundational triad in cybersecurity for managing user access and activity within systems:
+**Authentication, Authorization, Accounting** (AAA) form a foundational triad in cybersecurity for managing user access and activity within systems:
 - **Authentication** is the process of verifying the identity of a user or device, ensuring that the entity requesting access is who it claims to be. This typically involves credentials such as passwords, tokens, or biometrics.
 - **Authorization** follows authentication and determines the level of access or permissions granted to the verified entity. It enforces policies that control which resources or operations the user or device is allowed to perform.
 - **Accounting** involves tracking and recording user activity and resource usage. This data provides an audit trail critical for forensic analysis, compliance reporting, and detecting anomalous behavior within the environment.
