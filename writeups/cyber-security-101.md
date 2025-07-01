@@ -81,7 +81,43 @@ I’ve also already documented **Windows Fundamentals Parts 1–3** in [Pre Secu
 
 ### Active Directory Basics
 
+In a corporate environment, managing devices and users is typically handled through **Active Directory** (AD).
 
+When managing a few computers and employees, setting up and troubleshooting each one individually is reasonable. However, larger organizations with hundreds of computers rely on a **Windows domain** for scalability and efficiency.
+
+A **Windows domain** is a group of **users** and **computers** managed centrally by the organization. It enables **centralized administration** of common components within a Windows network, using a single repository called **Active Directory** (AD). AD services run on a server known as a **Domain Controller** (DC).
+
+Main advantages of a well-configured **Windows domain**:
+- **Centralized identity management**: Administrators can create and manage all user accounts and permissions through AD with minimal manual effort.
+- **Enforcing security policies**: Security policies can be deployed directly from AD and automatically applied to users and devices across the network.
+
+A **real-world example** is a school or corporate account system — on a campus or enterprise network, your username and password work on any computer because each device **authenticates** you through **Active Directory**. This **central system** checks your **credentials** and enforces **policies**, such as restricting access to the control panel or sensitive settings on all domain-joined machines.
+
+At the core of any **Windows domain** is the **Active Directory Domain Service** (AD DS). AD DS acts as a directory that stores details about all **objects** on the network — users, groups, computers, printers, shares, and more:
+
+- **Users** — the most common type of **security principal**, which means they can be **authenticated** by the **domain** and assigned permissions over **resources** like files and printers.
+  - User as **people** — represents real people in the organization, such as employees who need network access.
+  - User as **service** — services like IIS or MSSQL require user accounts to run securely with only the permissions needed for their tasks.
+
+- **Machines** — any computer joined to AD creates a **machine** object. Machines are also **security principals**, with limited rights inside the domain. They usually have **local administrator** rights only on themselves and should not be accessed like user accounts. **Machine** accounts follow a naming convention ending with a dollar sign (`$`), for example: `DC01$`.
+
+- **Security groups** — groups simplify permission management by letting you grant access rights to multiple users or computers at once. Adding a user to a group allows them to inherit that group’s privileges. Security groups can include **users**, **machines**, or other groups and are themselves **security principals**. Default groups are created automatically in every domain.
+
+To work with these objects in Active Directory (AD), we need to log in to the **Domain Controller** and launch **Active Directory Users and Computers** (ADUC) from the start menu.
+
+Opening ADUC displays objects organized in **Organizational Units** (OUs), which are **container objects** used to **classify** users and machines. OUs help define **groups** of users or devices with similar **policy requirements**. A single **user** or **computer** can belong to only one **OU** at a time.
+
+Some containers or OUs are created by **default** in Windows and include:
+
+- **Builtin**: Holds default groups available to any Windows system.
+- **Computers**: New machines that join the domain are placed here by default. They can be moved to other OUs as needed.
+- **Domain Controllers**: Default OU for Security Operations Center (SOC) domain controllers.
+- **Users**: Contains default domain-wide users and groups.
+- **Managed Service Accounts**: Stores accounts used by services within the Windows domain.
+
+While both **OUs** and **Security Groups** organize users and computers, they serve different purposes:
+- OUs apply **Group Policies** to users and computers to enforce specific configurations or restrictions. Since policies can conflict, an object can only belong to one OU.
+- **Security Groups** control permissions to resources like shared folders or printers. Users can be in multiple groups to manage access across different resources.
 
 ---
 
