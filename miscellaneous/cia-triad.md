@@ -1,8 +1,8 @@
-# Confidentiality, Integrity & Availability (CIA) Triad
+# Confidentiality, Integrity & Availability Triad
 
 ## Definition
 
-The **CIA Triad** is the foundational model for information security, representing the three core principles essential to protecting data and systems:
+The **Confidentiality, Integrity & Availability** (CIA) triad is the foundational model for information security, representing the three core principles essential to protecting data and systems:
 - **Confidentiality**: Ensuring information is accessible only to authorized users and processes, **preventing unauthorized disclosure**.
 - **Integrity**: Guaranteeing the accuracy, consistency, and trustworthiness of data over its lifecycle; **preventing unauthorized modification or corruption**.
 - **Availability**: Ensuring that information and critical systems are **accessible and operational when needed** by **authorized users**.
