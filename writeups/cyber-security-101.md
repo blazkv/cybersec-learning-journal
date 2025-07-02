@@ -81,43 +81,72 @@ I’ve also already documented **Windows Fundamentals Parts 1–3** in [Pre Secu
 
 ### Active Directory Basics
 
-In a corporate environment, managing devices and users is typically handled through **Active Directory** (AD).
+In a corporate environment, managing devices and users at scale is handled through **Active Directory** (AD).
 
-When managing a few computers and employees, setting up and troubleshooting each one individually is reasonable. However, larger organizations with hundreds of computers rely on a **Windows domain** for scalability and efficiency.
+For a small office with a handful of computers, it’s manageable to configure and troubleshoot each machine individually. But as an organization grows into hundreds or thousands of endpoints, a **Windows domain** becomes essential for scalability and centralized control.
 
-A **Windows domain** is a group of **users** and **computers** managed centrally by the organization. It enables **centralized administration** of common components within a Windows network, using a single repository called **Active Directory** (AD). AD services run on a server known as a **Domain Controller** (DC).
+A **Windows domain** is a collection of **users** and **computers** managed from a central location. This is possible because of **Active Directory** (AD), which acts as a single, authoritative directory for all domain objects. AD services run on a dedicated server called a **Domain Controller** (DC).
 
-Main advantages of a well-configured **Windows domain**:
-- **Centralized identity management**: Administrators can create and manage all user accounts and permissions through AD with minimal manual effort.
-- **Enforcing security policies**: Security policies can be deployed directly from AD and automatically applied to users and devices across the network.
+Key benefits of a properly configured **Windows domain**:
+- **Centralized identity management** — Administrators handle all user accounts, passwords, and permissions in one place, reducing manual overhead.
+- **Policy enforcement** — Security policies can be pushed from AD and automatically applied to any user or device that joins the domain.
 
-A **real-world example** is a school or corporate account system — on a campus or enterprise network, your username and password work on any computer because each device **authenticates** you through **Active Directory**. This **central system** checks your **credentials** and enforces **policies**, such as restricting access to the control panel or sensitive settings on all domain-joined machines.
+A simple example is a corporate or school network login: your username and password work on any domain-joined device because each machine **authenticates** you through **Active Directory**. AD verifies your **credentials**, then applies any required **policies**, like restricting Control Panel access or enforcing screen lock settings.
 
-At the core of any **Windows domain** is the **Active Directory Domain Service** (AD DS). AD DS acts as a directory that stores details about all **objects** on the network — users, groups, computers, printers, shares, and more:
+At the heart of a **Windows domain** is **Active Directory Domain Services** (AD DS). AD DS holds detailed records about all **objects** — the building blocks of a domain — including users, groups, computers, printers, and shared resources.
 
-- **Users** — the most common type of **security principal**, which means they can be **authenticated** by the **domain** and assigned permissions over **resources** like files and printers.
-  - User as **people** — represents real people in the organization, such as employees who need network access.
-  - User as **service** — services like IIS or MSSQL require user accounts to run securely with only the permissions needed for their tasks.
+- **Users** — The most common **security principal**. A user can be:
+  - A real person in the organization who needs network access.
+  - A service account used by software (like IIS or SQL Server) to run with only the required permissions.
 
-- **Machines** — any computer joined to AD creates a **machine** object. Machines are also **security principals**, with limited rights inside the domain. They usually have **local administrator** rights only on themselves and should not be accessed like user accounts. **Machine** accounts follow a naming convention ending with a dollar sign (`$`), for example: `DC01$`.
+- **Machines** — Any computer added to AD becomes a **machine object**, which is also a **security principal**. Machine accounts have local admin rights on themselves but shouldn’t be used like regular user accounts. By convention, machine account names end with a dollar sign (`$`), like `DC01$`.
 
-- **Security groups** — groups simplify permission management by letting you grant access rights to multiple users or computers at once. Adding a user to a group allows them to inherit that group’s privileges. Security groups can include **users**, **machines**, or other groups and are themselves **security principals**. Default groups are created automatically in every domain.
+- **Security groups** — These simplify access control. Adding a user to a group grants them that group’s permissions. Groups can contain **users**, **machines**, or even other groups. Security groups themselves are security principals too. Every domain comes with some default groups for common tasks.
 
-To work with these objects in Active Directory (AD), we need to log in to the **Domain Controller** and launch **Active Directory Users and Computers** (ADUC) from the start menu.
+To manage these objects, we log in to the **Domain Controller** and open **Active Directory Users and Computers** (ADUC) from the start menu.
 
-Opening ADUC displays objects organized in **Organizational Units** (OUs), which are **container objects** used to **classify** users and machines. OUs help define **groups** of users or devices with similar **policy requirements**. A single **user** or **computer** can belong to only one **OU** at a time.
+In ADUC, objects appear in **Organizational Units** (OUs). OUs are **container objects** that help classify users and computers into manageable sections. They allow administrators to apply **Group Policies** to specific sets of objects. Each user or machine can only belong to one OU at a time.
 
-Some containers or OUs are created by **default** in Windows and include:
+Common default containers and OUs include:
+- **Builtin** — Default Windows groups.
+- **Computers** — The default container for new machines joining the domain.
+- **Domain Controllers** — The default OU for Security Operations Center (SOC) domain controllers.
+- **Users** — Stores default domain-wide users and groups.
+- **Managed Service Accounts** — Holds accounts used by services within the domain.
 
-- **Builtin**: Holds default groups available to any Windows system.
-- **Computers**: New machines that join the domain are placed here by default. They can be moved to other OUs as needed.
-- **Domain Controllers**: Default OU for Security Operations Center (SOC) domain controllers.
-- **Users**: Contains default domain-wide users and groups.
-- **Managed Service Accounts**: Stores accounts used by services within the Windows domain.
+Both **OUs** and **Security Groups** organize users and computers, but their roles differ:
+- OUs apply **Group Policies** to configure or restrict devices and users. Because conflicting policies can cause issues, an object can only sit in one OU.
+- **Security Groups** grant or deny access to resources like shared drives or printers. A user can be in multiple groups at once to handle various permissions.
 
-While both **OUs** and **Security Groups** organize users and computers, they serve different purposes:
-- OUs apply **Group Policies** to users and computers to enforce specific configurations or restrictions. Since policies can conflict, an object can only belong to one OU.
-- **Security Groups** control permissions to resources like shared folders or printers. Users can be in multiple groups to manage access across different resources.
+To build practical experience, I tested creating a few Group Policy Objects (GPOs) to enforce security baselines. One GPO blocked non-IT users from accessing the **Control Panel**. Another enforced an auto-lock for all **workstations** and **servers** after 5 minutes of inactivity.
+
+To restrict the Control Panel, I created a GPO named **Restrict Control Panel Access**. Under **User Configuration**, I enabled `Prohibit Access to Control Panel and PC settings`. I linked this GPO to the **Marketing**, **Management**, and **Sales** OUs so only those users are restricted, while IT keeps full access for support and maintenance.
+
+For the auto-lock, I set up a GPO called **Auto Lock Screen**. Under **Computer Configuration**, I configured the inactivity timeout to 5 minutes. I linked it at the root domain level so that all **child OUs** inherit it automatically. Because this GPO only targets computers, it doesn’t interfere with user-only OUs like Sales or Marketing.
+
+To confirm everything worked, I connected through RDP as a test user (`THM\Mark`). When Mark tried to open the Control Panel, access was denied as expected. After 5 minutes idle, the session locked automatically. This lab reinforced how GPO inheritance and filtering work for managing different security baselines across AD.
+
+In a **Windows domain**, all credentials live on the **Domain Controllers**. When a user signs in, their credentials are verified by the DC using one of two protocols:
+- **Kerberos** — The standard protocol for modern Windows authentication.
+- **NetNTLM** — An older protocol still used in legacy cases.
+
+When a user authenticates with **Kerberos**, they send their username and a timestamp (encrypted with a key derived from their password) to the **Key Distribution Center (KDC)**, which runs on a **Domain Controller**.
+
+The KDC responds with a **Ticket Granting Ticket (TGT)** and a **Session Key**. The TGT is encrypted with the `krbtgt` account’s password hash, so the user can’t read it. This design lets the KDC recover the session information by decrypting the TGT later.
+
+When the user wants to access a service, they present the TGT, an encrypted timestamp, and the **Service Principal Name (SPN)** to the KDC to get a **Ticket Granting Service (TGS)** ticket. The KDC returns a TGS and a **Service Session Key**. The service decrypts the TGS, verifies the session key, and grants access.
+
+As organizations expand, one domain often isn’t enough. Managing multiple offices, compliance zones, or IT teams can make a single large domain difficult to maintain. **Active Directory** solves this with **trees** — multiple domains that share the same **namespace**. For example, `thm.local` might split into `uk.thm.local` and `us.thm.local`, forming a tree with one **root** and separate **subdomains**, each with its own DCs, users, and machines.
+
+Each domain has its own **Domain Admins**, while the **Enterprise Admins** group has full authority across all domains in the tree. This keeps local teams independent while enabling centralized oversight.
+
+Multiple **trees** with different namespaces form a **forest** — the top-level structure in AD for managing connected but separate domains.
+
+To share access across domains, AD uses **trust relationships**:
+- A **one-way trust** allows Domain BBB users to access Domain AAA’s resources (not the other way around). The trust direction is the opposite of the access direction.
+- A **two-way trust** allows both domains to grant each other’s users permissions. Domains in the same **tree** or **forest** automatically share a two-way trust.
+
+A trust doesn’t grant **automatic access** — it only enables permissions to be assigned across domains when needed.
 
 ---
 
