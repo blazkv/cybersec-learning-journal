@@ -152,7 +152,7 @@ A trust doesn’t grant **automatic access** — it only enables permissions to 
 
 ## 4. Command Line
 
-The **Command-line interface** (CLI) has several advantages over a GUI. It uses fewer system resources, supports robust **automation**, and enables straightforward **remote management**.
+The **command-line interface** (CLI) has several advantages over a **Graphic User Interface** (GUI). It uses fewer system resources, supports robust **automation**, and enables straightforward **remote management**.
 
 ---
 
