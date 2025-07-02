@@ -152,6 +152,8 @@ A trust doesn’t grant **automatic access** — it only enables permissions to 
 
 ## 4. Command Line
 
+The **Command-line interface** (CLI) has several advantages over a GUI. It uses fewer system resources, supports robust **automation**, and enables straightforward **remote management**. These strengths make the CLI an essential tool for any Security Operations Center (SOC) analyst who needs to manage multiple systems efficiently and repeat tasks reliably.
+
 ---
 
 ## 5. Networking
