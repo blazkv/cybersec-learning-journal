@@ -18,7 +18,7 @@ Current focus includes:
 
 Documented learning experiences from platforms like TryHackMe, online courses, certification prep, and study sessions.
 
-📁 Explore writeups in [`writeups/README.md`](writeups/README.md)
+📁 Explore Writeups in [`writeups/README.md`](writeups/README.md)
 
 ---
 
@@ -26,7 +26,7 @@ Documented learning experiences from platforms like TryHackMe, online courses, c
 
 Hands-on labs, technical experiments, and tool-based mini-projects that simulate real-world cybersecurity scenarios.
 
-📁 Browse labs in [`labs/README.md`](labs/README.md)
+📁 Explore Labs in [`labs/README.md`](labs/README.md)
 
 ---
 
@@ -34,7 +34,13 @@ Hands-on labs, technical experiments, and tool-based mini-projects that simulate
 
 Writeups on cybersecurity concepts and principles, other projects, CTFs and more.
 
-📁 View miscellaneous in [`miscellaneous/README.md`](miscellaneous/README.md)
+📁 Explore Miscellaneous in [`miscellaneous/README.md`](miscellaneous/README.md)
+
+## 🐍 Python Projects Overview
+
+Practical Python scripts and small projects focused on cybersecurity tasks and automation, designed to build hands-on coding skills and apply programming knowledge to security challenges.
+
+📁 Explore Python Projects in [`python/README.md`](python/README.md)
 
 ---
 
