@@ -8,5 +8,9 @@ This small project helped me refresh my Python basics and get more comfortable w
 
 ## 📁 Files
 
-- [`app.py`](app.py)
-- [`requirements.txt`](requirements.txt)
+- [`app.py`](app.py) — Main Python script
+- [`requirements.txt`](requirements.txt) — Python dependencies
+
+---
+
+[🔙 Back to **Miscellaneous Overview**](README.md)
