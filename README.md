@@ -36,6 +36,8 @@ Writeups on cybersecurity concepts and principles, other projects, CTFs and more
 
 📁 Explore Miscellaneous in [`miscellaneous/README.md`](miscellaneous/README.md)
 
+---
+
 ## 🐍 Python Projects Overview
 
 Practical Python scripts and small projects focused on cybersecurity tasks and automation, designed to build hands-on coding skills and apply programming knowledge to security challenges.
