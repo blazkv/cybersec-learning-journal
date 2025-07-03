@@ -1,7 +1,5 @@
 # Password Strength Checker & Generator
 
-As part of my ongoing cybersecurity studies, I’ve made learning Python a side project alongside my main focus. I used Python before during my university curriculum, so I’m familiar with core programming concepts — but now I want to build *practical*, hands-on experience I can apply directly in my future work.
-
 This small project helped me refresh my Python basics and get more comfortable with Python-specific tools: working with external packages like `pyperclip`, using modules like `string` and `secrets`, and setting up a simple `venv` to keep everything organized. My goal is to gradually build a toolkit of small, useful scripts that improve both my coding fluency and my security mindset.
 
 ```python
