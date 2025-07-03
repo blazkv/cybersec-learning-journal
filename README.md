@@ -14,6 +14,8 @@ Current focus includes:
 - Pursuing the Google Cybersecurity Professional Certificate
 - Preparing for the CompTIA Security+ certification
 
+---
+
 ## 📝 Writeups
 
 Documented learning experiences from platforms like TryHackMe, online courses, certification prep, and study sessions.
