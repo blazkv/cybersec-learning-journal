@@ -61,6 +61,6 @@ The NIST CSF is a broad and evolving topic, and this writeup captures only a sna
 
 ---
 
-🔝 Back to [top](#nist-cybersecurity-framework-csf)
+🔝 Back to [top](#nist-cybersecurity-framework)
 
 🔙 Back to [Miscellaneous Overview](README.md)
