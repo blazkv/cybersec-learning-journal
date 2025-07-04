@@ -405,6 +405,6 @@ Because shadow copies can be used to roll back malware or recover data, **malwar
 
 ---
 
-🔝 Back to [top](#tryhackme--pre-security)
+🔝 Back to [top](#tryhackme-pre-security)
 
 🔙 Back to [Writeups Overview](README.md)
