@@ -204,6 +204,26 @@ _Learn about scripting and the different types of Linux shells._
 
 ## 5. Networking
 
+The **Open Systems Interconnection** (OSI) model, defined by the International Organization for Standardization (ISO), describes how communication should occur in a computer network — it defines a **framework for computer network communications**. It is composed of seven layers:
+
+1. **Physical Layer** — handles the physical connection between devices. Data transmission can occur through electrical, optical, or wireless signals. Depending on the physical medium, we use cables or antennas to move bits from one point to another.
+
+2. **Data Link Layer** — defines protocols that enable data transfer between nodes on the same network segment. Simply put, it sets the rules for how devices on the same local network communicate. For example, in an office with ten computers connected to a single network switch, all those systems share the same network segment.
+
+   Ethernet and WiFi addresses are six bytes long and are called **Media Access Control (MAC)** addresses. A MAC address is typically shown in hexadecimal format, with a colon separating each byte (e.g., `00:1A:2B:3C:4D:5E`). The first three bytes identify the vendor. In real network traffic over Ethernet or WiFi, we usually see **two MAC addresses in each frame** — one for the source and one for the destination.
+
+3. **Network Layer**
+
+4. **Transport Layer**
+
+5. **Session Layer**
+
+6. **Presentation Layer**
+
+7. **Application Layer**
+
+To help remember the OSI layers in order, I like using a simple mnemonic: “Please Do Not Throw Spinach Pizza Away.”
+
 ---
 
 ## 6. Cryptography
