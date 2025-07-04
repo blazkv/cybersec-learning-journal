@@ -54,6 +54,6 @@ This case also highlighted the need for incident response plans to quickly resto
 
 ---
 
-🔝 Back to [top](#confidentiality-integrity--availability-cia-triad)
+🔝 Back to [top](#confidentiality-integrity--availability-triad)
 
 🔙 Back to [Miscellaneous Overview](README.md)
