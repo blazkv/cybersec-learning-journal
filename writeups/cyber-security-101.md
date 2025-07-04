@@ -204,25 +204,47 @@ _Learn about scripting and the different types of Linux shells._
 
 ## 5. Networking
 
-The **Open Systems Interconnection** (OSI) model, defined by the International Organization for Standardization (ISO), describes how communication should occur in a computer network — it defines a **framework for computer network communications**. It is composed of seven layers:
+The **Open Systems Interconnection** (OSI) model, defined by the International Organization for Standardization (ISO), describes how communication should occur in a computer network — it defines a **framework for computer network communications**. To help remember the OSI layers in order, I like using a simple mnemonic: _**P**lease **D**o **N**ot **T**hrow **S**pinach **P**izza **A**way_. It is composed of seven layers:
 
-1. **Physical Layer** — handles the physical connection between devices. Data transmission can occur through electrical, optical, or wireless signals. Depending on the physical medium, we use cables or antennas to move bits from one point to another.
+| Layer Number | Layer Name          | Main Function                                         | Example Protocols and Standards                  |
+|--------------|---------------------|-------------------------------------------------------|--------------------------------------------------|
+| Layer 7      | Application Layer   | Providing services and interfaces to applications     | HTTP, FTP, DNS, POP3, SMTP, IMAP                 |
+| Layer 6      | Presentation Layer  | Data encoding, encryption, and compression            | Unicode, MIME, JPEG, PNG, MPEG                   |
+| Layer 5      | Session Layer       | Establishing, maintaining, and synchronizing sessions | NFS, RPC                                         |
+| Layer 4      | Transport Layer     | End-to-end communication and data segmentation        | UDP, TCP                                         |
+| Layer 3      | Network Layer       | Logical addressing and routing between networks       | IP, ICMP, IPSec                                  |
+| Layer 2      | Data Link Layer     | Reliable data transfer between adjacent nodes         | Ethernet (802.3), WiFi (802.11)                  |
+| Layer 1      | Physical Layer      | Physical data transmission media                      | Electrical, optical, and wireless signals        |
 
-2. **Data Link Layer** — defines protocols that enable data transfer between nodes on the same network segment. Simply put, it sets the rules for how devices on the same local network communicate. For example, in an office with ten computers connected to a single network switch, all those systems share the same network segment.
+**Transmission Control Protocol/Internet Protocol** (TCP/IP) keeps a network operational even when parts of it fail. This resilience comes partly from the way routing protocols are designed to adapt dynamically as the network topology changes.
 
-   Ethernet and WiFi addresses are six bytes long and are called **Media Access Control (MAC)** addresses. A MAC address is typically shown in hexadecimal format, with a colon separating each byte (e.g., `00:1A:2B:3C:4D:5E`). The first three bytes identify the vendor. In real network traffic over Ethernet or WiFi, we usually see **two MAC addresses in each frame** — one for the source and one for the destination.
+The **TCP/IP model** differs from the **Open Systems Interconnection (OSI)** model by combining certain layers. In the TCP/IP stack, the responsibilities of the **Presentation Layer** and **Session Layer** are generally handled within the **Application Layer** protocols themselves.
 
-3. **Network Layer**
+| Layer Number | ISO OSI Model     | TCP/IP Model            | Protocols                                           |
+|--------------|-------------------|-------------------------|-----------------------------------------------------|
+| Layer 7      | Application Layer | Application Layer       | HTTP, HTTPS, FTP, POP3, SMTP, IMAP, Telnet, SSH     |
+| Layer 6      | Presentation Layer|                         | TLS, SSL, MIME, JPEG, MPEG                          |
+| Layer 5      | Session Layer     |                         | NetBIOS, RPC, PPTP                                  |
+| Layer 4      | Transport Layer   | Transport Layer         | TCP, UDP                                            |
+| Layer 3      | Network Layer     | Internet Layer          | IP, ICMP, IPSec                                     |
+| Layer 2      | Data Link Layer   | Link Layer              | Ethernet (802.3), WiFi (802.11)                     |
+| Layer 1      | Physical Layer    |                         |                                                     |
 
-4. **Transport Layer**
+Every host on a network needs a **unique identifier** to communicate with other hosts. When using the **Transmission Control Protocol/Internet Protocol (TCP/IP)**, we assign an **IP address** to each device. IPv4 (Internet Protocol version 4) is still the most common, but IPv6 (Internet Protocol version 6) is increasingly deployed to handle the shortage of available IPv4 addresses.
 
-5. **Session Layer**
+An IPv4 address is made up of **four octets** (4 x 8 bits = 32 bits). Each octet represents a value between 0 and 255. Typically, the first and last addresses in a subnet are reserved for **network** and **broadcast addresses**. For example, `192.168.1.0` identifies the network, and `192.168.1.255` is the broadcast address that targets **all hosts** within that network segment.
 
-6. **Presentation Layer**
+To check **network configuration**, we can use `ipconfig` on Windows, or `ifconfig` and `ip address show` (or the short version `ip a s`) on Linux.
 
-7. **Application Layer**
+A Request for Comments (RFC) defines the following three **private IP address ranges**:
 
-To help remember the OSI layers in order, I like using a simple mnemonic: “Please Do Not Throw Spinach Pizza Away.”
+- `10.0.0.0` – `10.255.255.255` (`10/8`)
+- `172.16.0.0` – `172.31.255.255` (`172.16/12`)
+- `192.168.0.0` – `192.168.255.255` (`192.168/16`)
+
+There are **public IP addresses** and **private IP addresses**. The purpose of private IP space is that it **cannot directly reach** or **be reached** from the **public Internet**. For a private IP address to access the Internet, the network’s router must have a **public IP address** and perform **Network Address Translation (NAT)** to translate between private and public IPs.
+
+TryHackMe (THM) describes a **router** like a post office — you hand it a parcel and it knows where to deliver it next. A router **forwards data packets** to the correct **network**. A packet usually passes through **multiple routers** on its path to its destination. A router operates on **Layer 3** of the OSI model, inspecting the **IP address** and forwarding the packet to the next network or router that is closer to the final destination.
 
 ---
 
