@@ -1,18 +1,8 @@
 # 🛡️ Cybersecurity Learning Journal
 
-Welcome to my cybersecurity learning journal, where I document hands-on experiences, course progress, labs, and self-guided projects as I build my skills in information security.
+Welcome to my cybersecurity learning journal — a space where I document hands-on practice, lab work, course progress, and personal projects as I grow my skills and experience in cybersecurity.
 
----
-
-## 👋 About Me
-
-I’m an aspiring cybersecurity professional based in Slovenia with a degree in Information Security. I am actively building practical skills through hands-on labs, certification preparation, and project-based learning.
-
-Current focus includes:
-- Completing TryHackMe learning paths
-- Building and managing Windows and Linux home labs
-- Pursuing the Google Cybersecurity Professional Certificate
-- Preparing for the CompTIA Security+ certification
+Visit my [GitHub profile](https://github.com/blazkv) to learn more about my work and ongoing projects.
 
 ---
 
@@ -45,10 +35,3 @@ Writeups on cybersecurity concepts and principles, other projects, CTFs and more
 Practical Python scripts and small projects focused on cybersecurity tasks and automation, designed to build hands-on coding skills and apply programming knowledge to security challenges.
 
 📁 Explore Python Projects in [`python/README.md`](python/README.md)
-
----
-
-## 📬 Contact
-
-- 💼 LinkedIn: [@blazkavcicvogrin](https://www.linkedin.com/in/blazkavcicvogrin/)  
-- 🐙 GitHub: [@blazkv](https://github.com/blazkv)
