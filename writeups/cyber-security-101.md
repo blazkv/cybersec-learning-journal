@@ -192,6 +192,6 @@ The **command-line interface** (CLI) has several advantages over a **Graphic Use
 
 ---
 
-[🔝 Back to **top**](#tryhackme-cyber-security-101)
+🔝 Back to [top](#tryhackme-cyber-security-101)
 
-[🔙 Back to **Writeups Overview**](README.md)
+🔙 Back to [Writeups Overview](README.md)
