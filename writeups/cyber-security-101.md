@@ -196,6 +196,7 @@ Finally, to check the file system for errors and bad sectors, run `chkdsk`. For 
 - Windows PowerShell
 
 _Discover the "Power" in PowerShell and learn the basics._
+
 - Linux Shells
 
 _Learn about scripting and the different types of Linux shells._
@@ -294,16 +295,27 @@ To complete this task, I used the terminal and ran `telnet 10.10.140.110 80` to 
 ### Premium-Only Content
 
 - **Networking Essentials**
+
 _Explore networking protocols from automatic configuration to routing packets to the destination._
+
 - **Networking Core Protocols**
+
 _Learn about the core TCP/IP protocols._
+
 - **Networking Secure Protocols**
+
 _Learn how TLS, SSH, and VPN can secure your network traffic._
+
 - **Wireshark: The Basics**
+
 _Learn the basics of Wireshark and how to analyse protocols and PCAPs._
+
 - **Tcpdump: The Basics**
+
 _Learn how to use Tcpdump to save, filter, and display packets._
+
 - **Nmap: The Basics**
+
 _Learn how to use Nmap to discover live hosts, find open ports, and detect service versions._
 
 ---
