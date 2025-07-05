@@ -244,7 +244,40 @@ A Request for Comments (RFC) defines the following three **private IP address ra
 
 There are **public IP addresses** and **private IP addresses**. The purpose of private IP space is that it **cannot directly reach** or **be reached** from the **public Internet**. For a private IP address to access the Internet, the network’s router must have a **public IP address** and perform **Network Address Translation (NAT)** to translate between private and public IPs.
 
-TryHackMe (THM) describes a **router** like a post office — you hand it a parcel and it knows where to deliver it next. A router **forwards data packets** to the correct **network**. A packet usually passes through **multiple routers** on its path to its destination. A router operates on **Layer 3** of the OSI model, inspecting the **IP address** and forwarding the packet to the next network or router that is closer to the final destination.
+TryHackMe describes a **router** like a post office — you hand it a parcel and it knows where to deliver it next. A router **forwards data packets** to the correct **network**. A packet usually passes through **multiple routers** on its path to its destination. A router operates on **Layer 3** of the OSI model, inspecting the **IP address** and forwarding the packet to the next network or router that is closer to the final destination.
+
+The **Internet Protocol (IP)** enables us to reach a destination host identified by its IP address on a **network**. However, we also need **transport layer protocols** to allow processes on **networked hosts** to communicate with each other — this is where **User Datagram Protocol (UDP)** and **Transmission Control Protocol (TCP)** come in.
+
+**UDP** helps reach a **specific process** on a target host. UDP operates at the **transport layer (Layer 4)** and is **connectionless** — it does not establish a session before sending data and provides no guarantee that a **packet** has been delivered. Think of it like mailing a letter without requiring delivery confirmation: simple, fast, and low overhead.
+
+While an **IP address** identifies the host, **port numbers** identify the sending and receiving processes. A port number uses **two octets** (1–65535). **Port 0** is **reserved**.
+
+In contrast, **TCP** is **connection-oriented**. Like UDP, it works at **Layer 4**, but it requires a **TCP connection** before any data is exchanged and ensures delivery by acknowledging packets.
+
+In TCP, each **data octet** is assigned a **sequence number** so the receiver can detect lost or duplicate packets. The receiver sends back an **acknowledgement number** to confirm the last received octet.
+
+A TCP connection is set up using a **three-way handshake**, which uses the **SYN** (Synchronise) and **ACK** (Acknowledgement) flags:
+
+- **SYN**: The client requests a connection by sending a SYN packet with its initial sequence number.
+- **SYN-ACK**: The server responds with a SYN-ACK packet, including its own initial sequence number.
+- **ACK**: The client completes the handshake with an ACK, confirming the server’s response.
+
+It’s also important to understand **encapsulation** — the process where each layer adds a **header** (and sometimes a **trailer**) to the received unit of data before passing it to the layer below. This keeps each layer focused on its specific role and enables reliable communication across complex networks.
+
+- **Application data**: The user’s input (e.g., an email or message) is formatted by the application and passed to the transport layer.
+- **Transport segment/datagram**: The transport layer (TCP or UDP) adds its header, creating a **segment** (TCP) or **datagram** (UDP), then passes it down.
+- **Network packet**: The network layer adds an **IP header**, producing a **packet** for routing across networks.
+- **Data link frame**: The data link layer (e.g., Ethernet or WiFi) adds a **frame header** and **trailer**, preparing the data for physical transmission.
+
+Here’s a simple recap of** the life of a packet** using what happens when you search for something on TryHackMe as an example:
+
+1. You **type** a search and **press enter** on TryHackMe.
+2. The **browser** uses **HTTPS** to create an **HTTP request** and passes it to the **transport layer**.
+3. **TCP** does a **three-way handshake**, sends the **HTTP request**, and splits it into **segments** for the **Internet layer**.
+4. The **IP layer** adds the **source IP** (your PC) and **destination IP** (TryHackMe server) and sends it to the **link layer**.
+5. The **link layer** adds a **header/trailer** and sends the packet to a **router**.
+6. Each **router** removes link info, checks the **IP address**, and **forwards** the packet until it reaches the server’s router.
+7. At the destination, the process is **reversed** so the server can process the **request**.
 
 ---
 
