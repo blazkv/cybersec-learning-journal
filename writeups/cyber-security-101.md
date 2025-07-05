@@ -269,7 +269,7 @@ It’s also important to understand **encapsulation** — the process where each
 - **Network packet**: The network layer adds an **IP header**, producing a **packet** for routing across networks.
 - **Data link frame**: The data link layer (e.g., Ethernet or WiFi) adds a **frame header** and **trailer**, preparing the data for physical transmission.
 
-Here’s a simple recap of** the life of a packet** using what happens when you search for something on TryHackMe as an example:
+Here’s a simple recap of **the life of a packet** using what happens when you search for something on TryHackMe as an example:
 
 1. You **type** a search and **press enter** on TryHackMe.
 2. The **browser** uses **HTTPS** to create an **HTTP request** and passes it to the **transport layer**.
@@ -278,6 +278,33 @@ Here’s a simple recap of** the life of a packet** using what happens when you 
 5. The **link layer** adds a **header/trailer** and sends the packet to a **router**.
 6. Each **router** removes link info, checks the **IP address**, and **forwards** the packet until it reaches the server’s router.
 7. At the destination, the process is **reversed** so the server can process the **request**.
+
+Teletype Network (TELNET) is a **network protocol** for remote terminal connections. It allows a user to connect to any server that is listening on a TCP port.
+
+In this task on **TryHackMe (THM)**, I used the **AttackBox** to target another virtual machine (VM). On that VM, several services were running:
+
+- **Echo server**: Echoes everything sent to it. By default, it listens on port `7`.
+- **Daytime server**: Listens on port `13` by default and responds with the current day and time.
+- **Web (HTTP) server**: Listens on TCP port `80` by default and serves web pages.
+
+THM notes that the echo and daytime servers are considered a **security risk** in real environments and should not be running. They are active here only for this practice task.
+
+To complete this task, I used the terminal and ran `telnet 10.10.140.110 80` to connect to the HTTP server. Once connected, I sent `GET / HTTP/1.1` along with `Host: telnet.thm`, then pressed Enter twice. This revealed the HTTP server version and allowed me to retrieve the **flag**.
+
+### Premium-Only Content
+
+- **Networking Essentials**
+_Explore networking protocols from automatic configuration to routing packets to the destination._
+- **Networking Core Protocols**
+_Learn about the core TCP/IP protocols._
+- **Networking Secure Protocols**
+_Learn how TLS, SSH, and VPN can secure your network traffic._
+- **Wireshark: The Basics**
+_Learn the basics of Wireshark and how to analyse protocols and PCAPs._
+- **Tcpdump: The Basics**
+_Learn how to use Tcpdump to save, filter, and display packets._
+- **Nmap: The Basics**
+_Learn how to use Nmap to discover live hosts, find open ports, and detect service versions._
 
 ---
 
