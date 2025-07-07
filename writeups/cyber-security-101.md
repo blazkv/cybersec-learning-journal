@@ -322,6 +322,53 @@ _Learn how to use Nmap to discover live hosts, find open ports, and detect servi
 
 ## 6. Cryptography
 
+Networking protocols enable global communication between devices, but **cryptography** ensures we can trust that communication. Cryptography is the practice and study of techniques that **secure communication** and **protect data**, even when adversaries may try to intercept or tamper with it. It safeguards **confidentiality**, **integrity**, and **authenticity** — the core goals of the CIA triad.
+
+We rarely notice cryptography in action, but it operates constantly in the background. Some examples include:
+
+- **Login credentials** are encrypted to prevent interception.
+- Connecting over **Secure Shell (SSH)** creates an encrypted tunnel to block eavesdropping.
+- **Online banking** uses cryptography to verify a server’s certificate, ensuring you’re not talking to an attacker.
+- When **downloading files**, cryptographic hashing confirms the file matches the original.
+- Companies handling **credit cards** must follow the **Payment Card Industry Data Security Standard (PCI DSS)** to securely **store**, **process**, and **transmit** card data.
+
+Various laws mandate the use of cryptography, including Health Insurance Portability and Accountability Act (HIPAA), Health Information Technology for Economic and Clinical Health (HITECH), General Data Protection Regulation (GDPR), and the Data Protection Act (DPA).
+
+In cryptography, **plaintext** is readable data that needs protection. **Encryption** uses a **cipher** and a **key** to convert plaintext into **ciphertext**, which hides the original message. **Decryption** then uses the same or a related key to turn the ciphertext back into plaintext.
+
+A **key** is a string of bits the cipher uses to encrypt or decrypt data. The cipher itself is usually public knowledge, but the key must stay secret — unless it is a public key used in **asymmetric encryption**, which I will cover in a later task.
+
+There are two types of encryption:
+
+- **Symmetric Encryption** (also called symmetric cryptography) uses the same **key** for both **encryption** and **decryption**. This is also known as **private key cryptography** because the key must remain secret. The key has to be shared through a **secure communication channel**, which can be difficult to maintain, especially when multiple recipients need access. Common symmetric encryption examples are **Data Encryption Standard (DES)**, **Triple DES (3DES)**, and **Advanced Encryption Standard (AES)**.
+  - **DES** uses a 56-bit key but became insecure as computing power improved.
+  - **3DES** strengthened DES by applying it three times but was only a temporary fix and is now deprecated.
+  - **AES** replaced DES in 2001 and remains the current standard, offering key sizes of 128, 192, or 256 bits.
+
+- **Asymmetric Encryption** (also called asymmetric cryptography) uses **a pair of keys** — one for **encryption** and another for **decryption**. To ensure **confidentiality**, data is encrypted with a **public key** and decrypted with a **private key**. Common examples include:
+  - **Rivest-Shamir-Adleman (RSA)** encrypts data with two keys: one to lock and another to unlock, relying on the difficulty of factoring large numbers.
+  - **Diffie-Hellman** securely exchanges cryptographic keys over an insecure channel, allowing two parties to establish a shared secret.
+  - **Elliptic Curve Cryptography (ECC)** provides strong security with smaller keys by using the mathematics of elliptic curves.
+
+Modern cryptography is built on mathematical principles. TryHackMe introduces two basic operations used in many algorithms:
+
+- **XOR** (exclusive OR) compares two bits and returns `1` if they are different or `0` if they are the same. It’s shown with `⊕` or `^`. For example, if `P` is the plaintext and `K` is the secret key, the ciphertext is `C = P ⊕ K`.
+- **Modulo Operation**, written as `%` or `mod`, returns the remainder when one number is divided by another. This remainder is a key part of many cryptographic methods.
+
+### Premium-only Content
+
+- **Public Key Cryptography Basics**
+
+_Discover how public key ciphers such as RSA work and explore their role in applications such as SSH._
+
+- **Hashing Basics**
+
+_Learn about hashing functions and their uses in password verification and file integrity checking._
+
+- **John the Ripper: The Basics**
+
+_Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool._
+
 ---
 
 ## 7. Exploitation Basics
