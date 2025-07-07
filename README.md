@@ -2,8 +2,6 @@
 
 Welcome to my cybersecurity learning journal — a space where I document hands-on practice, lab work, course progress, and personal projects as I grow my skills and experience in cybersecurity.
 
-Visit my [GitHub profile](https://github.com/blazkv) to learn more about my work and ongoing projects.
-
 ---
 
 ## 📝 Writeups
