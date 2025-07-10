@@ -51,4 +51,4 @@ Together, authentication, authorization, and accounting provide the SOC with the
 
 🔝 Back to [top](#authentication-authorization--accounting)
 
-🔙 Back to [Miscellaneous Overview](README.md)
+🔙 Back to [Cybersecurity Principles Overview](README.md)
