@@ -1,6 +1,6 @@
-# 📚 Miscellaneous Overview
+# 📚 Cybersecurity Principles Overview
 
-A collection of writeups, projects, and events related to cybersecurity concepts and experiences outside of structured labs.
+A curated collection of writeups, projects, and real-world examples exploring essential cybersecurity principles, frameworks, and practical insights.
 
 | Item | Description |
 |------|-------------|
