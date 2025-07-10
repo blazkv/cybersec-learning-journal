@@ -20,11 +20,11 @@ Hands-on labs, technical experiments, and tool-based mini-projects that simulate
 
 ---
 
-## 🧠 Miscellaneous
+## 📚 Cybersecurity Principles Overview
 
-Writeups on cybersecurity concepts and principles, other projects, CTFs and more.
+Writeups on cybersecurity concepts and principles, frameworkds, standards and more.
 
-📁 Explore Miscellaneous in [`miscellaneous/README.md`](miscellaneous/README.md)
+📁 Explore Miscellaneous in [`miscellaneous/README.md`](cybersecurity-principles-overview/README.md)
 
 ---
 
