@@ -7,7 +7,7 @@ The **Confidentiality, Integrity & Availability** (CIA) triad is the foundationa
 - **Integrity**: Guaranteeing the accuracy, consistency, and trustworthiness of data over its lifecycle; **preventing unauthorized modification or corruption**.
 - **Availability**: Ensuring that information and critical systems are **accessible and operational when needed** by **authorized users**.
 
-As defined by the **National Institute of Standards and Technology (NIST)** in **[Special Publication 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)**, these principles guide the implementation of security controls and risk management strategies.
+As defined by the **National Institute of Standards and Technology (NIST)** in [Special Publication 800-53](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final), these principles guide the implementation of security controls and risk management strategies.
 
 ---
 
