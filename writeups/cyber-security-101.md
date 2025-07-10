@@ -387,6 +387,28 @@ The issue arises when the link includes a `!` character with extra text, which b
 
 ## 8. Web Hacking
 
+**Metasploit Framework** is the most common open-source exploitation framework. It’s powerful for scanning, exploitation, and post-exploitation tasks. I’m using `msfconsole` to run **modules** like exploits and payloads, and tools like `msfvenom` to generate custom payloads. In this next task, I’ll practice using Metasploit inside a Linux virtual machine (VM) to learn how to find exploits, configure options, and test them safely.
+
+I started by launching `msfconsole` in the Terminal. This gave me access to various Metasploit Framework modules — each built for a specific purpose. Key terms to keep clear:
+
+- **Exploit**: Code that takes advantage of a vulnerability on the target system.
+- **Vulnerability**: A flaw that can let an attacker access data or run code.
+- **Payload**: The code that runs on the target once the exploit succeeds.
+
+Each module fits into categories:
+
+- **Auxiliary** — extra tools like scanners, crawlers, or fuzzers.
+- **Encoders** — encode exploits and payloads to bypass signature-based antivirus.
+- **Evasion** — help hide attacks better than encoders alone.
+- **Exploits** — organized by target systems.
+- **NOPs (No Operation)** — fillers to keep payload sizes stable by pausing the CPU briefly.
+- **Payloads** — code executed on the target, divided into:
+  - **Adapters** — wrap payloads to run in different formats, like converting to a `PowerShell` command.
+  - **Singles** — self-contained payloads that run immediately (e.g., add a user).
+  - **Stagers** — set up a connection between Metasploit and the target to pull in a larger payload.
+  - **Stages** — the larger payloads delivered by the stager for more complex tasks.
+- **Post modules** — used after exploitation for tasks like gathering credentials or escalating privileges.
+
 ---
 
 ## 9. Offensive Security Tooling
