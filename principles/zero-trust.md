@@ -91,4 +91,4 @@ Despite these challenges, the security benefits and evolving threat landscape ma
 
 🔝 Back to [top](#zero-trust-architecture)
 
-🔙 Back to [Miscellaneous Overview](README.md)
+🔙 Back to [Cybersecurity Principles Overview](README.md)
