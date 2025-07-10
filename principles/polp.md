@@ -69,4 +69,4 @@ Maintaining POLP requires continuous effort: clear policies, technical enforceme
 
 🔝 Back to [top](#principle-of-least-privilege)
 
-🔙 Back to [Miscellaneous Overview](README.md)
+🔙 Back to [Cybersecurity Principles Overview](README.md)
