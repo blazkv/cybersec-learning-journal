@@ -14,7 +14,7 @@ Writeups on cybersecurity concepts and principles, frameworkds, standards and mo
 
 ## 📝 Writeups
 
-Documented learning experiences from platforms like TryHackMe, online courses, certification prep, and study sessions.
+Detailed learning reflections and walkthroughs from online platforms such as TryHackMe, Coursera, and others.
 
 📁 Explore Writeups in [`writeups/README.md`](writeups/README.md)
 
