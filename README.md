@@ -24,7 +24,7 @@ Hands-on labs, technical experiments, and tool-based mini-projects that simulate
 
 Writeups on cybersecurity concepts and principles, frameworkds, standards and more.
 
-📁 Explore Miscellaneous in [`miscellaneous/README.md`](cybersecurity-principles-overview/README.md)
+📁 Explore Miscellaneous in [`miscellaneous/README.md`](principles/README.md)
 
 ---
 
