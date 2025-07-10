@@ -4,6 +4,14 @@ Welcome to my cybersecurity learning journal — a space where I document hands-
 
 ---
 
+## 📚 Cybersecurity Principles Overview
+
+Writeups on cybersecurity concepts and principles, frameworkds, standards and more.
+
+📁 Explore Cybersecurity Principles in [`principles/README.md`](principles/README.md)
+
+---
+
 ## 📝 Writeups
 
 Documented learning experiences from platforms like TryHackMe, online courses, certification prep, and study sessions.
@@ -17,14 +25,6 @@ Documented learning experiences from platforms like TryHackMe, online courses, c
 Hands-on labs, technical experiments, and tool-based mini-projects that simulate real-world cybersecurity scenarios.
 
 📁 Explore Labs in [`labs/README.md`](labs/README.md)
-
----
-
-## 📚 Cybersecurity Principles Overview
-
-Writeups on cybersecurity concepts and principles, frameworkds, standards and more.
-
-📁 Explore Cybersecurity Principles in [`principles/README.md`](principles/README.md)
 
 ---
 
