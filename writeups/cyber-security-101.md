@@ -387,27 +387,70 @@ The issue arises when the link includes a `!` character with extra text, which b
 
 ## 8. Web Hacking
 
-**Metasploit Framework** is the most common open-source exploitation framework. It’s powerful for scanning, exploitation, and post-exploitation tasks. I’m using `msfconsole` to run **modules** like exploits and payloads, and tools like `msfvenom` to generate custom payloads. In this next task, I’ll practice using Metasploit inside a Linux virtual machine (VM) to learn how to find exploits, configure options, and test them safely.
+**Metasploit Framework** is the most common open-source exploitation framework. It’s powerful for scanning, exploitation, and post-exploitation tasks. I’m using `msfconsole` to run **modules** like exploits and payloads, and tools like `msfvenom` to generate custom payloads. In this task, I practiced using **Metasploit** inside a Linux virtual machine (VM) to learn how to find exploits, configure options, and test them safely.
 
-I started by launching `msfconsole` in the Terminal. This gave me access to various Metasploit Framework modules — each built for a specific purpose. Key terms to keep clear:
+I started by launching `msfconsole` in the Terminal. This gave me access to various **Metasploit Framework** modules — each built for a specific purpose. Key terms to remember:
 
-- **Exploit**: Code that takes advantage of a vulnerability on the target system.
-- **Vulnerability**: A flaw that can let an attacker access data or run code.
-- **Payload**: The code that runs on the target once the exploit succeeds.
+- **Exploit** — Code that takes advantage of a vulnerability on the target system.
+- **Vulnerability** — A flaw that can let an attacker access data or run code.
+- **Payload** — The code that runs on the target once the exploit succeeds.
 
-Each module fits into categories:
+Each module falls into categories:
 
-- **Auxiliary** — extra tools like scanners, crawlers, or fuzzers.
-- **Encoders** — encode exploits and payloads to bypass signature-based antivirus.
-- **Evasion** — help hide attacks better than encoders alone.
-- **Exploits** — organized by target systems.
-- **NOPs (No Operation)** — fillers to keep payload sizes stable by pausing the CPU briefly.
-- **Payloads** — code executed on the target, divided into:
-  - **Adapters** — wrap payloads to run in different formats, like converting to a `PowerShell` command.
-  - **Singles** — self-contained payloads that run immediately (e.g., add a user).
-  - **Stagers** — set up a connection between Metasploit and the target to pull in a larger payload.
-  - **Stages** — the larger payloads delivered by the stager for more complex tasks.
-- **Post modules** — used after exploitation for tasks like gathering credentials or escalating privileges.
+- **Auxiliary** — Extra tools like scanners, crawlers, or fuzzers.
+- **Encoders** — Encode exploits and payloads to bypass signature-based antivirus.
+- **Evasion** — Help hide attacks better than encoders alone.
+- **Exploits** — Organized by target systems.
+- **NOPs (No Operation)** — Fillers that stabilize payload sizes by briefly pausing the CPU.
+- **Payloads** — The actual code executed on the target, divided into:
+  - **Adapters** — Wrap payloads to run in different formats, like converting to a `PowerShell` command.
+  - **Singles** — Self-contained payloads that run immediately (for example, adding a user).
+  - **Stagers** — Set up a connection between **Metasploit** and the target to pull in a larger payload.
+  - **Stages** — The larger payloads delivered by the stager for more complex tasks.
+- **Post modules** — Used after exploitation for tasks like gathering credentials or escalating privileges.
+
+After launching `msfconsole`, the prompt changed to `msf6` (version-dependent). Inside **msfconsole**, I can still run regular command-line commands like `ls`, `ping`, or `clear`, and view my command history with `history`.
+
+**Msfconsole** is context-based, so it’s best practice to save parameters as global variables to keep them consistent across modules. For example, I used the **MS17-010 EternalBlue** exploit by typing `use exploit/windows/smb/ms17_010_eternalblue`. This changed my prompt to `msf6 exploit(windows/smb/ms17_010_eternalblue)`. Even though the context changed, I can still run standard commands — we’re not entering a folder like in a typical shell, but shifting context within **Metasploit**.
+
+Inside an exploit module, `show options` displays the module’s settings, requirements, and target info. Similarly, `show` plus another keyword (like `show payloads`) lists available modules of that type.
+
+To exit a module’s context and return to the main prompt, I use `back`.
+
+To get more details about any module, I run the `info` command in context (for example, `info exploit/windows/smb/ms17_010_eternalblue`) or directly from the main prompt. This shows the author, references, and relevant information — it’s not a help menu.
+
+The `search` command queries the **Metasploit Framework** database for modules. For example, `search ms17-010` finds modules related to MS17-010. I can also search by **Common Vulnerabilities and Exposures (CVE)** numbers or use keywords like **type** and **platform** (`search type:auxiliary telnet`).
+
+To set module parameters, I use `set PARAMETER_NAME VALUE` and check them with `show options`. Common parameters include:
+
+- **RHOSTS** — The remote host IP address. This can be a single IP, a **CIDR** range (`/24`, `/16`), or a file list (`file:/path/to/targets.txt`).
+- **RPORT** — The remote port where the vulnerable service runs.
+- **PAYLOAD** — The payload to deliver with the exploit.
+- **LHOST** — The local IP address of my attacking machine (for example, **Kali Linux**).
+- **LPORT** — The local port that the reverse shell connects back to. This should be unused.
+- **SESSION** — The session ID of an active connection, used for post-exploitation modules.
+
+To clear a parameter, I use `unset PARAMETER_NAME` or `unset all`.
+
+For consistent settings across multiple modules, I use `setg` instead of `set`. The `setg` command saves the variable as a **global value**, so I don’t have to re-enter it when switching modules — useful for values like **LHOST** and **LPORT**. To clear a global setting, I use `unsetg`. Any value set with `setg` stays active until I exit the **Metasploit Framework** or clear it manually.
+
+Launching an exploit is done with the `exploit` command. **Metasploit** also supports `run` as an alternative. The `exploit` command can be used alone or with `-z` to immediately background the session once it opens.
+
+Some modules have a `check` option to verify if the target system is vulnerable without actually exploiting it.
+
+When a vulnerability is exploited, a **session** is created and a communication channel is established between the target and **Metasploit**. I can use `background` to background the session and return to the main prompt, or press `CTRL + Z` to do the same. The `sessions` command lists all active sessions and works from any context.
+
+To interact with an active session, I use `sessions -i SESSION_NUMBER`.
+
+### Premium-Only Content
+
+- **Metasploit: Exploitation**
+
+_Using Metasploit for scanning, vulnerability assessment and exploitation._
+
+- **Metasploit: Meterpreter**
+
+_Take a deep dive into Meterpreter, and see how in-memory payloads can be used for post-exploitation._
 
 ---
 
