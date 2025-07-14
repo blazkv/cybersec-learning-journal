@@ -474,6 +474,134 @@ _Take a deep dive into Meterpreter, and see how in-memory payloads can be used f
 
 ## 9. Offensive Security Tooling
 
+There are many parts that make a web application work. **Front End** elements like `HTML`, `CSS`, and `JavaScript` shape what users see and do in the browser. **Back End** components such as the **Web Server**, **Database**, and **Web Application Firewall (WAF)** handle the behind-the-scenes processes that keep everything running securely.
+
+A **Uniform Resource Locator (URL)** is the address that points your browser to the right place online.
+
+A URL includes:
+
+- **Scheme** — Defines the protocol, usually `HTTP` or `HTTPS`. `HTTPS` encrypts traffic for secure communication.
+- **User** — May contain a username for sites needing authentication, but this is rarely used today due to security risks.
+- **Host/Domain** — Shows which website you’re visiting. Watch for fake domains used in phishing.
+- **Port** — Directs the connection to the right service. Common ports are `80` (`HTTP`) and `443` (`HTTPS`).
+- **Path** — Points to a specific page or file on the server.
+- **Query String** — Starts with `?` and passes extra data like search terms; must be handled securely.
+- **Fragment** — Starts with `#` and links to a section of a page; also needs proper sanitisation.
+
+**HTTP messages** (packets exchanged between client and server) include:
+
+- **HTTP Requests** — Sent by the user to perform actions.
+- **HTTP Responses** — Sent by the server to answer the request.
+
+Each HTTP message has:
+
+- **Start Line** — Says if it’s a request or response and what it does.
+- **Headers** — Key-value pairs with extra details like content type and security info.
+- **Empty Line** — Separates headers from the body.
+- **Body** — Carries the actual data, like form info or the webpage content.
+
+An **HTTP request** is what a browser sends to a **Web Server** to interact with a web application and trigger an action. Since this is often the first touchpoint between the user and the server, knowing how requests work is essential for building a secure mindset.
+
+A basic HTTP request has three parts: the **method** (like `GET` or `POST`), the **URL path** (such as `/login`), and the **HTTP version** (for example, `HTTP/1.1`). Together, these parts define how a client talks to a server.
+
+- **Request Line**  
+  The request line, also called the start line, is the first line in the request and tells the server what to do. It always includes the HTTP method, the path, and the version.
+  - Example: `METHOD /path HTTP/version`
+
+- **HTTP Methods**  
+  The method shows the server what action to perform. Each method has its own security considerations I need to remember:
+
+  - **GET**  
+    Used to request data without changing anything on the server. It’s important to make sure only safe, non-sensitive data is exposed. Sensitive info like tokens or passwords should never be sent with `GET` since they can appear in plaintext.
+
+  - **POST**  
+    Sends data to the server, usually to create or update something. Always validate and sanitise input to block attacks like **SQL injection** or **Cross-Site Scripting (XSS)**.
+
+  - **PUT**  
+    Replaces or updates a resource. Only allow authorised users to make these changes.
+
+  - **DELETE**  
+    Removes a resource from the server. Like `PUT`, always confirm the user is authorised.
+
+  - **PATCH**  
+    Updates part of a resource instead of replacing the whole thing. Data should be validated to prevent inconsistencies.
+
+  - **HEAD**  
+    Similar to `GET` but only fetches headers. Useful for checking metadata without loading full content.
+
+  - **OPTIONS**  
+    Shows which methods are allowed for a resource. Good for testing but can reveal too much info if left open.
+
+  - **TRACE**  
+    Used for debugging, but often disabled for security to avoid exposing data.
+
+  - **CONNECT**  
+    Creates a secure tunnel, like for `HTTPS`. Less common but critical for encrypted traffic.
+
+- **URL Path**  
+  The path shows the server which resource the user wants. For example, in `https://tryhackme.com/api/users/123`, `/api/users/123` points to a specific user. Attackers often try to mess with paths to access data they shouldn’t, so it’s important to:
+  - Validate paths to stop unauthorised access.
+  - Sanitise paths to prevent injection.
+  - Protect sensitive data by planning how paths are structured.
+
+- **HTTP Version**  
+  The version shows which version of HTTP is being used to handle communication between the client and server.
+
+**Request Headers** add extra details to help the **Web Server** handle the request properly. They carry useful information like where the request is coming from, what format the data is in, and how the browser should manage cookies.
+
+| **Request Header** | **Example** | **Description** |
+|--------------------|-------------|-----------------|
+| **Host** | `Host: example.org` | Defines which **Web Server** the request should reach.                                     |
+| **User-Agent** | `User-Agent: Firefox/115.0` | Gives info about the browser or tool making the request.                     |
+| **Referer** | `Referer: https://www.linkedin.com/` | Shows the source URL the request came from.                            |
+| **Cookie** | `Cookie: user_id=789; mode=guest; progress=ongoing` | Sends stored data back to the server, like session info. |
+| **Content-Type** | `Content-Type: application/json` | Specifies the data format used in the request body.                   |
+
+In `POST` and `PUT` requests, data is placed in the **HTTP Request Body** and sent to the server for processing. This data can use different formats, depending on what’s needed:
+
+- **URL Encoded** (`application/x-www-form-urlencoded`)  
+  Puts data in simple key-value pairs joined by `&`. For example: `email=test@example.org&role=user`. Special characters get percent-encoded to stay web-safe.
+
+- **Form Data** (`multipart/form-data`)  
+  Sends blocks of data separated by a boundary defined in the header. This is used when uploading files or images because it can handle binary data.
+
+- **JSON** (`application/json`)  
+  Uses **JavaScript Object Notation (JSON)** to send data in name-value pairs inside `{ }`, split with commas. Example: `{ "email": "test@example.org", "role": "user" }`.
+
+- **XML** (`application/xml`)  
+  Uses nested tags with opening and closing labels to organise data. For example, a user record could be wrapped in `<user>` tags for structure.
+
+If an HTTP request fails or needs to communicate status, the **HTTP Response** includes a **Status Line** with three parts:
+
+1. **HTTP Version** – Shows the protocol version in use.  
+2. **Status Code** – A three-digit number indicating the request outcome.  
+3. **Reason Phrase** – A brief, human-readable explanation of the status code.
+
+Status codes are grouped into five categories:
+
+- **Informational (100-199)**  
+  The server has received part of the request and is waiting for the rest. It signals to continue.
+
+- **Successful (200-299)**  
+  The request was processed successfully, and the server is returning the requested data.
+
+- **Redirection (300-399)**  
+  The requested resource has moved, often providing a new URL.
+
+- **Client Errors (400-499)**  
+  Issues with the request, like incorrect URLs or missing authentication.
+
+- **Server Errors (500-599)**  
+  Problems on the server side prevented completing the request.
+
+Common status codes include:
+
+- **100 Continue** – Server ready for the rest of the request.  
+- **200 OK** – Request succeeded, resource is returned.  
+- **301 Moved Permanently** – Resource moved permanently; update URL.  
+- **404 Not Found** – Resource not found; check the URL.  
+- **500 Internal Server Error** – Server encountered an error processing the request.
+
 ---
 
 ## 10. Defensive Security
