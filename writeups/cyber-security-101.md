@@ -602,6 +602,68 @@ Common status codes include:
 - **404 Not Found** – Resource not found; verify the URL.  
 - **500 Internal Server Error** – Server encountered an error processing the request.
 
+When a web server responds to an HTTP request, it sends **HTTP response headers**—key-value pairs that provide important information about the response and instruct the client (usually a browser) on how to handle it.
+
+Key headers like `Content-Type`, `Content-Length`, and `Date` give essential details about the response.
+
+Some response headers are required to ensure proper communication between client and server:
+
+- **Date:** Shows when the response was generated.  
+  Example: `Date: Fri, 23 Aug 2024 10:43:21 GMT`
+
+- **Content-Type:** Indicates the type of content being sent (HTML, JSON, etc.) and its character set.  
+  Example: `Content-Type: text/html; charset=utf-8`
+
+- **Server:** Identifies the server software handling the request. Useful for debugging but can reveal info to attackers, so it’s often removed or hidden.  
+  Example: `Server: nginx`
+
+Other common headers help control how the client handles the response:
+
+- **Set-Cookie:** Sends cookies from server to client, which the client stores and sends back in future requests. For security, cookies should use the `HttpOnly` flag (prevents JavaScript access) and `Secure` flag (only sent over HTTPS).  
+  Example: `Set-Cookie: sessionId=38af1337es7a8`
+
+- **Cache-Control:** Tells the client how long to cache the response or whether to avoid caching sensitive data.  
+  Example: `Cache-Control: max-age=600`
+
+- **Location:** Used in redirection responses (status codes 3xx) to tell the client where to go next. If this header can be modified by users, validate it carefully to avoid open redirect vulnerabilities, which attackers can exploit to redirect users to malicious sites.  
+  Example: `Location: /index.html`
+
+The **HTTP response body** contains the actual data—HTML, JSON, images, etc.—sent back to the client. To prevent injection attacks like **Cross-Site Scripting (XSS)**, always sanitize and escape any data, especially user-generated content, before including it in the response.
+
+**HTTP security headers** help protect web apps from attacks like **Cross-Site Scripting (XSS)** and clickjacking. Important ones include:
+
+* **Content-Security-Policy (CSP)**:
+  Controls which sources can load content to prevent XSS. Example:
+  `Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.tryhackme.com; style-src 'self'`
+
+  * `default-src 'self'`: only current site by default
+  * `script-src`: scripts allowed from current site and trusted CDN
+  * `style-src 'self'`: styles only from current site
+
+* **Strict-Transport-Security (HSTS)**:
+  Forces browsers to use HTTPS. Example:
+  `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
+
+  * `max-age`: duration to enforce HTTPS
+  * `includeSubDomains`: applies to subdomains
+  * `preload`: browser enforces HTTPS before first visit
+
+* **X-Content-Type-Options**:
+  Stops browsers from guessing MIME types:
+  `X-Content-Type-Options: nosniff`
+
+  * `nosniff`: disables MIME sniffing
+
+* **Referrer-Policy**:
+  Controls how much referrer info is shared:
+
+  * `no-referrer`: sends no referrer info
+  * `same-origin`: sends only for same-site requests
+  * `strict-origin`: sends origin only if HTTPS stays
+  * `strict-origin-when-cross-origin`: full URL for same-site, origin for cross-site
+
+These headers strengthen security and protect user privacy.
+
 ---
 
 ## 10. Defensive Security
