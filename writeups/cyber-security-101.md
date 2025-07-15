@@ -632,35 +632,35 @@ The **HTTP response body** contains the actual dataâ€”HTML, JSON, images, etc.â€
 
 **HTTP security headers** help protect web apps from attacks like **Cross-Site Scripting (XSS)** and clickjacking. Important ones include:
 
-* **Content-Security-Policy (CSP)**:
+- **Content-Security-Policy (CSP)**:
   Controls which sources can load content to prevent XSS. Example:
   `Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.tryhackme.com; style-src 'self'`
 
-  * `default-src 'self'`: only current site by default
-  * `script-src`: scripts allowed from current site and trusted CDN
-  * `style-src 'self'`: styles only from current site
+  - `default-src 'self'`: only current site by default
+  - `script-src`: scripts allowed from current site and trusted CDN
+  - `style-src 'self'`: styles only from current site
 
-* **Strict-Transport-Security (HSTS)**:
+- **Strict-Transport-Security (HSTS)**:
   Forces browsers to use HTTPS. Example:
   `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
 
-  * `max-age`: duration to enforce HTTPS
-  * `includeSubDomains`: applies to subdomains
-  * `preload`: browser enforces HTTPS before first visit
+  - `max-age`: duration to enforce HTTPS
+  - `includeSubDomains`: applies to subdomains
+  - `preload`: browser enforces HTTPS before first visit
 
-* **X-Content-Type-Options**:
+- **X-Content-Type-Options**:
   Stops browsers from guessing MIME types:
   `X-Content-Type-Options: nosniff`
 
-  * `nosniff`: disables MIME sniffing
+  - `nosniff`: disables MIME sniffing
 
-* **Referrer-Policy**:
+- **Referrer-Policy**:
   Controls how much referrer info is shared:
 
-  * `no-referrer`: sends no referrer info
-  * `same-origin`: sends only for same-site requests
-  * `strict-origin`: sends origin only if HTTPS stays
-  * `strict-origin-when-cross-origin`: full URL for same-site, origin for cross-site
+  - `no-referrer`: sends no referrer info
+  - `same-origin`: sends only for same-site requests
+  - `strict-origin`: sends origin only if HTTPS stays
+  - `strict-origin-when-cross-origin`: full URL for same-site, origin for cross-site
 
 These headers strengthen security and protect user privacy.
 
