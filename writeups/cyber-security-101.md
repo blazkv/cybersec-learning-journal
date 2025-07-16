@@ -664,6 +664,28 @@ The **HTTP response body** contains the actual data—HTML, JSON, images, etc.�
 
 These headers strengthen security and protect user privacy.
 
+The **Open Web Application Security Project** (OWASP) is a nonprofit foundation dedicated to helping the cybersecurity community understand web technologies, common exploits, and practical ways to secure software applications. As the final part of this module, I studied the **OWASP Top 10**, which highlights the most critical web application vulnerabilities.
+
+1. **Broken Access Control** (BAC) happens when a website’s restrictions fail, allowing unauthorized users to access pages or actions meant for admins only. This can expose sensitive data or let attackers perform restricted operations.
+
+**Insecure Direct Object Reference** (IDOR) is a specific case of BAC. It occurs when an application exposes a **Direct Object Reference** — like a user ID or file name — without proper checks. For example, if an `id` parameter in a URL isn’t validated correctly, an attacker could access another user’s information just by changing the value.
+
+2. **Cryptographic Failures** result from poor use of cryptographic algorithms. Web applications rely on **cryptography** to ensure **confidentiality**. Connections between the browser and server must be encrypted — this is called **encrypting data in transit**. Data should also be encrypted when stored, known as **encrypting data at rest**.
+
+### Premium-Only Content
+
+- JavaScript Essentials
+
+*Learn how to use JavaScript to add interactivity to a website and understand associated vulnerabilities.*
+
+- SQL Fundamentals
+
+*Learn how to perform basic SQL queries to retrieve and manage data in a database.*
+
+- Burp Suite: The Basics
+
+*An introduction to using Burp Suite for web application pentesting.*
+
 ---
 
 ## 10. Defensive Security
