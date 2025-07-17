@@ -672,6 +672,10 @@ The **Open Web Application Security Project** (OWASP) is a nonprofit foundation 
 
 2. **Cryptographic Failures** result from poor use of cryptographic algorithms. Web applications rely on **cryptography** to ensure **confidentiality**. Connections between the browser and server must be encrypted — this is called **encrypting data in transit**. Data should also be encrypted when stored, known as **encrypting data at rest**.
 
+Databases make it easy for web applications to store and retrieve large amounts of data, but if a flat-file database like **SQLite** is stored carelessly inside a web root, it can lead to **Sensitive Data Exposure** — allowing attackers to download and query it directly, exposing critical details like credit card numbers and password hashes.
+
+Once an attacker has these password hashes, the next step is to crack them and recover the plaintext passwords. Using **Crackstation**, an online hash-cracking tool, works well for weak **MD5** hashes like these. Crackstation matches hashes against a massive wordlist — if the password is common, it will be cracked easily. If it’s not in the wordlist, the hash stays secure, which underlines the importance of using strong, unique passwords to reduce risk.
+
 ### Premium-Only Content
 
 - JavaScript Essentials
