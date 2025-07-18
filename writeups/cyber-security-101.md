@@ -676,6 +676,12 @@ Databases make it easy for web applications to store and retrieve large amounts 
 
 Once an attacker has these password hashes, the next step is to crack them and recover the plaintext passwords. Using **Crackstation**, an online hash-cracking tool, works well for weak **MD5** hashes like these. Crackstation matches hashes against a massive wordlist — if the password is common, it will be cracked easily. If it’s not in the wordlist, the hash stays secure, which underlines the importance of using strong, unique passwords to reduce risk.
 
+3. Injection flaws are still a widespread threat and occur when an application processes user-controlled input as part of commands or queries. Common examples include **SQL Injection**, where user input is passed to database queries, and **Command Injection**, where user input is passed to system commands. Preventing injection relies on validating input strictly — for example, by **using an allow list** and **sanitizing input** to ensure it cannot be interpreted as executable code. In **Command Injection**, server-side code calls functions that directly interact with the server’s console. If an attacker exploits this, the damage can range from data theft to full system compromise.
+
+4. **Insecure Design** refers to weaknesses rooted in how an application is planned and architected, not just coded. These flaws often come from poor threat modeling or temporary shortcuts — like disabling **One-Time Passwords** (OTP) for convenience — that accidentally remain in production. Because these issues are structural, they often require redesigning parts of the system instead of just patching code. For example, Instagram once used a 6-digit SMS code for password resets. Although brute-force attempts were blocked per IP after 250 tries, attackers bypassed this by spreading attempts across thousands of cloud-hosted IPs, showing how design flaws can defeat security controls. The best defense is strong threat modeling and secure design practices from the very beginning.
+
+5. **Security Misconfigurations** happen when systems are not set up securely, even when the tools are available. Common cases include misconfigured cloud storage permissions, leftover default credentials, unused but active services, overly detailed error messages, or missing HTTP security headers. These gaps can expose applications to other threats like unauthorized data access, privilege escalation, or remote code execution.
+
 ### Premium-Only Content
 
 - JavaScript Essentials
