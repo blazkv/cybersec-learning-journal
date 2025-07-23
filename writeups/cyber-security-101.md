@@ -802,6 +802,22 @@ Strong input validation, strict whitelisting of allowed destinations, and proper
 
 ---
 
+## 9. Offensive Security
+
+### Premium-Only Content
+
+- Gobuster: The Basics
+
+*This room focuses on an introduction to Gobuster, an offensive security tool used for enumeration.*
+
+- Shells Overview
+
+*Learn about the different types of shells.*
+
+- SQLMap: The Basics
+
+*Learn about SQL injection and exploit this vulnerability through the SQLMap tool.*
+
 ## 10. Defensive Security
 
 ---
