@@ -836,4 +836,4 @@ Strong input validation, strict whitelisting of allowed destinations, and proper
 
 🔝 Back to [top](#tryhackme-cyber-security-101)
 
-🔙 Back to [Writeups Overview](README.md)
+🔙 Back to [Course Writeups Overview](README.md)
