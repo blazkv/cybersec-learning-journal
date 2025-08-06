@@ -1,4 +1,4 @@
-# 📝 Writeups Overview
+# 📝 Course Writeups Overview
 
 This folder contains detailed notes, summaries, and walkthroughs of cybersecurity courses, platforms, and self-guided learning.
 
