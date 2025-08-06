@@ -12,11 +12,11 @@ Writeups on cybersecurity concepts and principles, frameworkds, standards and mo
 
 ---
 
-## 📝 Writeups
+## 📝 Course Writeups
 
 Detailed learning reflections and walkthroughs from online platforms such as TryHackMe, Coursera, and others.
 
-📁 Explore Writeups in [`writeups/README.md`](writeups/README.md)
+📁 Explore Course Writeups in [`writeups/README.md`](writeups/README.md)
 
 ---
 
@@ -25,11 +25,3 @@ Detailed learning reflections and walkthroughs from online platforms such as Try
 Hands-on labs, technical experiments, and tool-based mini-projects that simulate real-world cybersecurity scenarios.
 
 📁 Explore Labs in [`labs/README.md`](labs/README.md)
-
----
-
-## 🐍 Python Projects Overview
-
-Practical Python scripts and small projects focused on cybersecurity tasks and automation, designed to build hands-on coding skills and apply programming knowledge to security challenges.
-
-📁 Explore Python Projects in [`python/README.md`](python/README.md)
